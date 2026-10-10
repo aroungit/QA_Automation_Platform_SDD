@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+.expo
+.workspace
+reports
+playwright-report
+test-results
+package-lock.json
+SDD_QAA_architecture.md

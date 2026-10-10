@@ -1,0 +1,18 @@
+node_modules/
+dist/
+build/
+.expo/
+*.log
+.env
+.env.*
+!.env.example
+
+# Temporary workspace for failed / unapproved artifacts (never committed)
+.workspace/
+
+# Playwright outputs
+playwright-report/
+test-results/
+blob-report/
+
+.DS_Store

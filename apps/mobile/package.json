@@ -1,0 +1,6 @@
+{
+  "name": "@qaa/mobile",
+  "version": "0.1.0",
+  "private": true,
+  "description": "QA_Automation_Platform_Agent — React Native (Expo) companion app (scaffold; implemented in M1+)"
+}

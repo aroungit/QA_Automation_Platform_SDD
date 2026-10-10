@@ -1,0 +1,7 @@
+{
+  "name": "@qaa/web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "QA_Automation_Platform_Agent — React web app (scaffold; implemented in W1+)",
+  "type": "module"
+}
