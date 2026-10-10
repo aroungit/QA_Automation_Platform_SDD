@@ -4,8 +4,10 @@ import type { AppConfig } from './config.js';
 import { getConfig } from './config.js';
 import { errorHandler, notFoundHandler } from './middleware/error-handler.js';
 import { ProviderRegistry } from './providers/registry.js';
+import { createAutomationRouter } from './routes/automation.js';
 import { createHealthRouter } from './routes/health.js';
 import { createProvidersRouter } from './routes/providers.js';
+import { createReportsRouter } from './routes/reports.js';
 import { createSpecsRouter } from './routes/specs.js';
 import { FileStore } from './storage/file-store.js';
 
@@ -50,6 +52,8 @@ export function createApp(deps?: AppDependencies): {
   app.use(createHealthRouter());
   app.use(createProvidersRouter(registry));
   app.use(createSpecsRouter(store, registry));
+  app.use(createReportsRouter(store));
+  app.use(createAutomationRouter(store));
 
   // 404 and error handling
   app.use(notFoundHandler);

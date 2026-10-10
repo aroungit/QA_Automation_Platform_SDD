@@ -1,0 +1,155 @@
+[
+  {
+    "id": "TC-LOGIN-001",
+    "specId": "SPEC-LOGIN-002",
+    "title": "Verify positive main flow for Admin User Authentication & Role-Based Access",
+    "preconditions": [
+      "Target application OrangeHRM is reachable in the test environment",
+      "User is in an authorized initial state on web"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Navigate to OrangeHRM Admin User Authentication & Role-Based Access interface on web",
+        "expectedResult": "Admin User Authentication & Role-Based Access view is loaded and ready for interaction"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Enter required input data according to standard positive criteria",
+        "expectedResult": "Inputs are populated and validated without errors"
+      },
+      {
+        "stepNumber": 3,
+        "action": "Submit or confirm the primary action",
+        "expectedResult": "Valid username and password should authenticate successfully and redirect to the Dashboard page."
+      },
+      {
+        "stepNumber": 4,
+        "action": "Verify acceptance condition: Clicking \"Forgot your password?\" should navigate to the password reset request screen.",
+        "expectedResult": "Clicking \"Forgot your password?\" should navigate to the password reset request screen."
+      }
+    ],
+    "expectedResults": [
+      "Clicking \"Forgot your password?\" should navigate to the password reset request screen."
+    ],
+    "priority": "high",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-002",
+    "specId": "SPEC-LOGIN-002",
+    "title": "Verify exception handling: Exception 1: Invalid username or password should disp",
+    "preconditions": [
+      "Target application OrangeHRM is reachable in the test environment",
+      "User is in an authorized initial state on web"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Set up scenario where Trigger condition related to: Invalid username or password should display an error alert \"Invalid credentials\" without revealing which field was incorrect.",
+        "expectedResult": "Condition is established"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Trigger action under exception condition",
+        "expectedResult": "Display appropriate validation error or prevention mechanism (Invalid username or password should display an error alert \"Invalid credentials\" without revealing which field was incorrect.)"
+      }
+    ],
+    "expectedResults": [
+      "Display appropriate validation error or prevention mechanism (Invalid username or password should display an error alert \"Invalid credentials\" without revealing which field was incorrect.)"
+    ],
+    "priority": "medium",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-003",
+    "specId": "SPEC-LOGIN-002",
+    "title": "Verify exception handling: Exception 2: Submitting empty username or password fi",
+    "preconditions": [
+      "Target application OrangeHRM is reachable in the test environment",
+      "User is in an authorized initial state on web"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Set up scenario where Trigger condition related to: Submitting empty username or password fields should display inline validation messages \"Required\".",
+        "expectedResult": "Condition is established"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Trigger action under exception condition",
+        "expectedResult": "Display appropriate validation error or prevention mechanism (Submitting empty username or password fields should display inline validation messages \"Required\".)"
+      }
+    ],
+    "expectedResults": [
+      "Display appropriate validation error or prevention mechanism (Submitting empty username or password fields should display inline validation messages \"Required\".)"
+    ],
+    "priority": "medium",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-004",
+    "specId": "SPEC-LOGIN-002",
+    "title": "Verify alternate flow: Alternate Flow: Secondary action pathway",
+    "preconditions": [
+      "Target application OrangeHRM is reachable in the test environment",
+      "User is in an authorized initial state on web"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Navigate to OrangeHRM secondary options",
+        "expectedResult": "Step 1 completes as expected"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Perform alternate action sequence",
+        "expectedResult": "Step 2 completes as expected"
+      },
+      {
+        "stepNumber": 3,
+        "action": "Verify alternative state matches expected behavior",
+        "expectedResult": "Step 3 completes as expected"
+      }
+    ],
+    "expectedResults": [
+      "Alternate pathway Alternate Flow: Secondary action pathway completes successfully"
+    ],
+    "priority": "medium",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-005",
+    "specId": "SPEC-LOGIN-002",
+    "title": "Verify data validation rules for Admin User Authentication & Role-Based Access",
+    "preconditions": [
+      "Target application OrangeHRM is reachable in the test environment",
+      "User is in an authorized initial state on web"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Attempt input violating rules for: username (required, valid format), password (required, masked)",
+        "expectedResult": "Validation error displayed, submission blocked"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Provide compliant inputs for: username (required, valid format), password (required, masked)",
+        "expectedResult": "Inputs accepted without errors"
+      }
+    ],
+    "expectedResults": ["System enforces input data requirements correctly"],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  }
+]

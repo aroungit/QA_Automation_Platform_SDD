@@ -50,34 +50,34 @@ Work is delivered **phase by phase**. A phase is started only after the previous
 - [x] Test case generator (no behavior beyond the spec)
 - [x] Schema validation and persistence in `/specs`
 
-### C3 — Approval gate API (§3.4) — ⬜ Not started
+### C3 — Approval gate API (§3.4) — ✅ Completed
 
-- [ ] Statuses: Draft, Under Review, Approved, Rejected, Needs Clarification
-- [ ] Transition rules and reviewer comments
-- [ ] `approval-record.json`
-- [ ] Rejected/clarification loop back to generation
+- [x] Statuses: Draft, Under Review, Approved, Rejected, Needs Clarification
+- [x] Transition rules and reviewer comments
+- [x] `approval-record.json`
+- [x] Rejected/clarification loop back to generation
 
-### C4 — Playwright script generator (§3.5) — ⬜ Not started
+### C4 — Playwright script generator (§3.5) — ✅ Completed
 
-- [ ] Only Approved test cases proceed
-- [ ] TypeScript + Page Object Model, test-data separation, stable selectors
-- [ ] Traceability comments (Spec ID / Test Case ID)
-- [ ] Web and mobile outputs to temporary workspace; Playwright config
+- [x] Only Approved test cases proceed
+- [x] TypeScript + Page Object Model, test-data separation, stable selectors
+- [x] Traceability comments (Spec ID / Test Case ID)
+- [x] Web and mobile outputs to temporary workspace; Playwright config
 
-### C5 — Automated validation & auto-heal (§3.6) — ⬜ Not started
+### C5 — Automated validation & auto-heal (§3.6) — ✅ Completed
 
-- [ ] Static validation (tsc, lint, selector/import checks)
-- [ ] Dynamic validation (execution, screenshots, traces, console logs)
-- [ ] Specification conformance check
-- [ ] Playwright healer agent / MCP integration with bounded retries
-- [ ] Validation reports
+- [x] Static validation (tsc, lint, selector/import checks)
+- [x] Dynamic validation (execution, screenshots, traces, console logs)
+- [x] Specification conformance check
+- [x] Playwright healer agent / MCP integration with bounded retries
+- [x] Validation reports
 
-### C6 — Repository service & quality gates (§3.7, §8) — ⬜ Not started
+### C6 — Repository service & quality gates (§3.7, §8) — ✅ Completed
 
-- [ ] Promote validated artifacts to `/specs`, `/automation`, `/reports`
-- [ ] Commits reference spec ID
-- [ ] Failed scripts stay in temporary workspace with failure report
-- [ ] Spec change triggers revalidation
+- [x] Promote validated artifacts to `/specs`, `/automation`, `/reports`
+- [x] Commits reference spec ID
+- [x] Failed scripts stay in temporary workspace with failure report
+- [x] Spec change triggers revalidation
 
 ## Track D — Final
 

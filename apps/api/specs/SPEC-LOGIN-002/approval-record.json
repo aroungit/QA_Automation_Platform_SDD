@@ -1,0 +1,18 @@
+{
+  "specId": "SPEC-LOGIN-002",
+  "status": "Draft",
+  "reviewer": "System",
+  "comments": "Specification created via user story intake",
+  "approvedTestCases": [],
+  "timestamp": "2026-10-10T12:37:48.672Z",
+  "history": [
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Draft",
+      "reviewer": "System",
+      "comments": "Specification created via user story intake",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-10T12:37:48.672Z"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ export interface GenerateSpecOptions {
   provider?: string;
   model?: string;
   temperature?: number;
+  feedback?: string;
 }
 
 export class SpecificationGenerator {
@@ -36,7 +37,7 @@ export class SpecificationGenerator {
 
     if (resolvedProvider && resolvedProvider.isConfigured()) {
       try {
-        const prompt = this.buildPrompt(story);
+        const prompt = this.buildPrompt(story, options?.feedback);
         const generated = await resolvedProvider.generateJSON<Specification>(
           prompt,
           SpecificationSchema,
@@ -67,13 +68,13 @@ export class SpecificationGenerator {
     }
 
     // Deterministic fallback specification generator
-    return this.generateDeterministic(story);
+    return this.generateDeterministic(story, options?.feedback);
   }
 
   /**
    * Deterministic template generator for offline or test environments
    */
-  generateDeterministic(story: UserStoryRecord): Specification {
+  generateDeterministic(story: UserStoryRecord, feedback?: string): Specification {
     // Extract actor from story if "As a/an <actor>"
     let actor = 'Standard User';
     const actorMatch = story.story.match(/As an?\s+([^,\n]+)/i);
@@ -190,15 +191,20 @@ export class SpecificationGenerator {
       nonFunctionalRequirements: [
         'Operations should respond within 3000ms',
         'UI elements must have accessible and stable test selectors',
+        ...(feedback ? [`Reviewer feedback addressed: ${feedback}`] : []),
       ],
       targetApp: story.targetApp,
       environment: 'default',
     };
 
+    if (feedback) {
+      rawSpec.preconditions.push(`Feedback incorporated: ${feedback}`);
+    }
+
     return SpecificationSchema.parse(rawSpec);
   }
 
-  private buildPrompt(story: UserStoryRecord): string {
+  private buildPrompt(story: UserStoryRecord, feedback?: string): string {
     return `
 Convert the following User Story and Acceptance Criteria into a formal Functional Specification conforming to Spec-Driven Development:
 
@@ -213,7 +219,14 @@ ${story.story}
 
 ACCEPTANCE CRITERIA:
 ${story.acceptanceCriteria.map((c, i) => `${i + 1}. ${c}`).join('\n')}
-
+${
+  feedback
+    ? `
+REVIEWER FEEDBACK / CLARIFICATION REQUEST (MUST BE ADDRESSED):
+"${feedback}"
+`
+    : ''
+}
 Generate a JSON object matching this schema:
 {
   "specId": "${story.id}",

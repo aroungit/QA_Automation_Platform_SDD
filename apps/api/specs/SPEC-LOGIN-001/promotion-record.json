@@ -1,0 +1,127 @@
+{
+  "specId": "SPEC-LOGIN-001",
+  "promotedAt": "2026-10-10T13:24:48.460Z",
+  "validationReportId": "VAL-SPEC-LOGIN-001-1791637471880",
+  "status": "promoted",
+  "revalidationRequired": false,
+  "promotedFiles": [
+    {
+      "sourcePath": "playwright.config.ts",
+      "targetPath": "automation/playwright.config.ts",
+      "category": "config",
+      "platform": "shared",
+      "size": 1736
+    },
+    {
+      "sourcePath": "tsconfig.json",
+      "targetPath": "automation/tsconfig.json",
+      "category": "config",
+      "platform": "shared",
+      "size": 317
+    },
+    {
+      "sourcePath": "web/fixtures/auth-data.json",
+      "targetPath": "automation/web/fixtures/auth-data.json",
+      "category": "fixture",
+      "platform": "web",
+      "size": 448
+    },
+    {
+      "sourcePath": "web/pages/DashboardPage.ts",
+      "targetPath": "automation/web/pages/DashboardPage.ts",
+      "category": "page",
+      "platform": "web",
+      "size": 1079
+    },
+    {
+      "sourcePath": "web/pages/LoginPage.ts",
+      "targetPath": "automation/web/pages/LoginPage.ts",
+      "category": "page",
+      "platform": "web",
+      "size": 2075
+    },
+    {
+      "sourcePath": "web/tests/SPEC-LOGIN-001/SPEC-LOGIN-001.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-LOGIN-001/SPEC-LOGIN-001.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 3409
+    },
+    {
+      "sourcePath": "web/tests/SPEC-LOGIN-001/TC-LOGIN-001.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-LOGIN-001/TC-LOGIN-001.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 1058
+    },
+    {
+      "sourcePath": "web/tests/SPEC-LOGIN-001/TC-LOGIN-002.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-LOGIN-001/TC-LOGIN-002.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 1176
+    },
+    {
+      "sourcePath": "web/tests/SPEC-LOGIN-001/TC-LOGIN-003.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-LOGIN-001/TC-LOGIN-003.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 1176
+    },
+    {
+      "sourcePath": "web/tests/SPEC-LOGIN-001/TC-LOGIN-004.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-LOGIN-001/TC-LOGIN-004.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 1034
+    },
+    {
+      "sourcePath": "web/tests/SPEC-LOGIN-001/TC-LOGIN-005.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-LOGIN-001/TC-LOGIN-005.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 1064
+    },
+    {
+      "sourcePath": "web/utils/test-helpers.ts",
+      "targetPath": "automation/web/utils/test-helpers.ts",
+      "category": "util",
+      "platform": "web",
+      "size": 550
+    }
+  ],
+  "commit": {
+    "sha": "d500a216d8c9e2ee65ad9b9a722a80880eaebfeb",
+    "message": "feat(SPEC-LOGIN-001): promote validated Playwright automation test suite (§3.7)",
+    "committedFiles": [
+      "automation/playwright.config.ts",
+      "automation/tsconfig.json",
+      "automation/web/fixtures/auth-data.json",
+      "automation/web/pages/DashboardPage.ts",
+      "automation/web/pages/LoginPage.ts",
+      "automation/web/tests/SPEC-LOGIN-001/SPEC-LOGIN-001.spec.ts",
+      "automation/web/tests/SPEC-LOGIN-001/TC-LOGIN-001.spec.ts",
+      "automation/web/tests/SPEC-LOGIN-001/TC-LOGIN-002.spec.ts",
+      "automation/web/tests/SPEC-LOGIN-001/TC-LOGIN-003.spec.ts",
+      "automation/web/tests/SPEC-LOGIN-001/TC-LOGIN-004.spec.ts",
+      "automation/web/tests/SPEC-LOGIN-001/TC-LOGIN-005.spec.ts",
+      "automation/web/utils/test-helpers.ts",
+      "specs/SPEC-LOGIN-001/user-story.md",
+      "specs/SPEC-LOGIN-001/user-story.json",
+      "specs/SPEC-LOGIN-001/specification.md",
+      "specs/SPEC-LOGIN-001/specification.json",
+      "specs/SPEC-LOGIN-001/test-cases.md",
+      "specs/SPEC-LOGIN-001/test-cases.json",
+      "specs/SPEC-LOGIN-001/approval-record.json",
+      "specs/SPEC-LOGIN-001/promotion-record.json",
+      "reports/execution-results/VAL-SPEC-LOGIN-001-1791637471880.json"
+    ],
+    "timestamp": "2026-10-10T13:24:48.500Z",
+    "author": "Copilot <223556219+Copilot@users.noreply.github.com>"
+  },
+  "metadata": {
+    "platform": "web",
+    "targetApp": "OrangeHRM",
+    "reviewer": "Lead QA Engineer"
+  }
+}

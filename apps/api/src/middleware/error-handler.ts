@@ -56,6 +56,12 @@ export const errorHandler: ErrorRequestHandler = (err, req, res, _next) => {
     if ('status' in err && typeof (err as { status?: unknown }).status === 'number') {
       status = (err as { status: number }).status;
     }
+    if ('code' in err && typeof (err as { code?: unknown }).code === 'string') {
+      code = (err as { code: string }).code;
+    }
+    if ('failedGates' in err) {
+      details = (err as { failedGates?: unknown }).failedGates;
+    }
   }
 
   const response: ApiResponse<never> = {

@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import type { ApprovalRecord } from '@qaa/shared';
+import type { ApprovalRecord, PromotionRecord } from '@qaa/shared';
 import type { AppConfig } from '../config.js';
 import { getConfig } from '../config.js';
 import { parseSpecId } from './id-generator.js';
@@ -13,6 +13,7 @@ export interface SpecArtifactsInput {
   testCases?: string;
   testCasesJson?: unknown;
   approvalRecord?: ApprovalRecord;
+  promotionRecord?: PromotionRecord;
 }
 
 export interface SpecArtifacts {
@@ -24,6 +25,7 @@ export interface SpecArtifacts {
   testCases?: string;
   testCasesJson?: unknown;
   approvalRecord?: ApprovalRecord;
+  promotionRecord?: PromotionRecord;
   files: string[];
 }
 
@@ -35,10 +37,13 @@ export interface SpecSummary {
   hasSpecification: boolean;
   hasTestCases: boolean;
   hasApprovalRecord: boolean;
+  hasPromotionRecord?: boolean;
   testCaseCount?: number;
   targetApp?: string;
   platform?: string;
   priority?: string;
+  promoted?: boolean;
+  revalidationRequired?: boolean;
   updatedAt: string;
 }
 
@@ -131,6 +136,13 @@ export class FileStore {
         'utf-8',
       );
     }
+    if (artifacts.promotionRecord !== undefined) {
+      await fs.writeFile(
+        path.join(dir, 'promotion-record.json'),
+        JSON.stringify(artifacts.promotionRecord, null, 2),
+        'utf-8',
+      );
+    }
 
     return dir;
   }
@@ -181,6 +193,14 @@ export class FileStore {
         const raw = await fs.readFile(path.join(dir, 'approval-record.json'), 'utf-8');
         try {
           result.approvalRecord = JSON.parse(raw) as ApprovalRecord;
+        } catch {
+          // ignore parse error
+        }
+      }
+      if (entries.includes('promotion-record.json')) {
+        const raw = await fs.readFile(path.join(dir, 'promotion-record.json'), 'utf-8');
+        try {
+          result.promotionRecord = JSON.parse(raw) as PromotionRecord;
         } catch {
           // ignore parse error
         }
@@ -270,6 +290,19 @@ export class FileStore {
           }
         }
 
+        let promoted = false;
+        let revalidationRequired = false;
+        if (files.includes('promotion-record.json')) {
+          try {
+            const raw = await fs.readFile(path.join(specPath, 'promotion-record.json'), 'utf-8');
+            const parsed = JSON.parse(raw) as PromotionRecord;
+            promoted = parsed.status === 'promoted';
+            revalidationRequired = Boolean(parsed.revalidationRequired);
+          } catch {
+            // ignore
+          }
+        }
+
         summaries.push({
           specId,
           title,
@@ -278,10 +311,13 @@ export class FileStore {
           hasSpecification: files.includes('specification.md'),
           hasTestCases: files.includes('test-cases.md'),
           hasApprovalRecord: files.includes('approval-record.json'),
+          hasPromotionRecord: files.includes('promotion-record.json'),
           testCaseCount,
           targetApp,
           platform,
           priority,
+          promoted,
+          revalidationRequired,
           updatedAt: stat ? stat.mtime.toISOString() : new Date().toISOString(),
         });
       }
@@ -306,6 +342,47 @@ export class FileStore {
       }
     }
     return maxSeq + 1;
+  }
+
+  // ==========================================
+  // Promotion Record Store (§3.7)
+  // ==========================================
+
+  async savePromotionRecord(specId: string, record: PromotionRecord): Promise<string> {
+    const dir = this.getSpecDir(specId);
+    await fs.mkdir(dir, { recursive: true });
+    const fullPath = path.join(dir, 'promotion-record.json');
+    await fs.writeFile(fullPath, JSON.stringify(record, null, 2), 'utf-8');
+    return fullPath;
+  }
+
+  async readPromotionRecord(specId: string): Promise<PromotionRecord | null> {
+    const fullPath = path.join(this.getSpecDir(specId), 'promotion-record.json');
+    try {
+      const raw = await fs.readFile(fullPath, 'utf-8');
+      return JSON.parse(raw) as PromotionRecord;
+    } catch {
+      return null;
+    }
+  }
+
+  async getSpecFileMtimes(specId: string): Promise<Record<string, Date>> {
+    const dir = this.getSpecDir(specId);
+    const mtimes: Record<string, Date> = {};
+    try {
+      const entries = await fs.readdir(dir);
+      for (const entry of entries) {
+        try {
+          const stat = await fs.stat(path.join(dir, entry));
+          mtimes[entry] = stat.mtime;
+        } catch {
+          // ignore
+        }
+      }
+    } catch {
+      // ignore
+    }
+    return mtimes;
   }
 
   // ==========================================
@@ -397,6 +474,44 @@ export class FileStore {
       return await fs.readFile(this.getAutomationPath(platform, category, filename), 'utf-8');
     } catch {
       return null;
+    }
+  }
+
+  async writeAutomationFile(relPath: string, content: string): Promise<string> {
+    const fullPath = path.join(this.automationDir, relPath);
+    await fs.mkdir(path.dirname(fullPath), { recursive: true });
+    await fs.writeFile(fullPath, content, 'utf-8');
+    return fullPath;
+  }
+
+  async readAutomationFileDirect(relPath: string): Promise<string | null> {
+    try {
+      const fullPath = path.join(this.automationDir, relPath);
+      return await fs.readFile(fullPath, 'utf-8');
+    } catch {
+      return null;
+    }
+  }
+
+  async listAllAutomationFiles(): Promise<string[]> {
+    try {
+      const results: string[] = [];
+      const traverse = async (current: string, rel: string) => {
+        const entries = await fs.readdir(current, { withFileTypes: true });
+        for (const entry of entries) {
+          const entryRel = rel ? `${rel}/${entry.name}` : entry.name;
+          const entryFull = path.join(current, entry.name);
+          if (entry.isDirectory()) {
+            await traverse(entryFull, entryRel);
+          } else {
+            results.push(entryRel.replace(/\\/g, '/'));
+          }
+        }
+      };
+      await traverse(this.automationDir, '');
+      return results;
+    } catch {
+      return [];
     }
   }
 

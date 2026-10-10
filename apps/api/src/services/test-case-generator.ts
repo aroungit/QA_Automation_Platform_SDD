@@ -15,6 +15,7 @@ export interface GenerateTestCasesOptions {
   provider?: string;
   model?: string;
   temperature?: number;
+  feedback?: string;
 }
 
 export class TestCaseGenerator {
@@ -48,7 +49,7 @@ export class TestCaseGenerator {
 
     if (resolvedProvider && resolvedProvider.isConfigured()) {
       try {
-        const prompt = this.buildPrompt(spec, userStory);
+        const prompt = this.buildPrompt(spec, userStory, options?.feedback);
         const testCasesArraySchema = z.array(TestCaseSchema);
 
         const generated = await resolvedProvider.generateJSON<TestCase[]>(
@@ -228,7 +229,7 @@ export class TestCaseGenerator {
     return z.array(TestCaseSchema).parse(testCases);
   }
 
-  private buildPrompt(spec: Specification, userStory?: UserStoryRecord): string {
+  private buildPrompt(spec: Specification, userStory?: UserStoryRecord, feedback?: string): string {
     return `
 You are an expert QA Automation Engineer following Spec-Driven Development (SDD).
 
@@ -240,7 +241,15 @@ SPECIFICATION:
 ${JSON.stringify(spec, null, 2)}
 
 ${userStory ? `ORIGINAL USER STORY:\n${userStory.story}\n` : ''}
-
+${
+  feedback
+    ? `
+REVIEWER FEEDBACK / CLARIFICATION REQUEST (MUST BE ADDRESSED):
+"${feedback}"
+Ensure the test cases address this feedback while strictly derived from the specification.
+`
+    : ''
+}
 Generate an array of test cases strictly covering:
 1. Positive functional test cases from the main flow.
 2. Negative / exception test cases from the exception flows.
