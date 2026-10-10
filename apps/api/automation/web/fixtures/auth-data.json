@@ -1,0 +1,20 @@
+{
+  "validCredentials": {
+    "username": "Admin",
+    "password": "admin123"
+  },
+  "invalidCredentials": {
+    "username": "InvalidUser",
+    "password": "WrongPassword123",
+    "expectedErrorMessage": "Invalid credentials"
+  },
+  "emptyCredentials": {
+    "username": "",
+    "password": "",
+    "expectedErrorMessage": "Required"
+  },
+  "urls": {
+    "login": "/web/index.php/auth/login",
+    "dashboard": "/web/index.php/dashboard/index"
+  }
+}
