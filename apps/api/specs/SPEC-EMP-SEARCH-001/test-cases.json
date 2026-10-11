@@ -1,0 +1,139 @@
+[
+  {
+    "id": "TC-EMP-SEARCH-001",
+    "specId": "SPEC-EMP-SEARCH-001",
+    "title": "Verify positive main flow for PIM Employee Search by Name and Employment Status",
+    "preconditions": [
+      "Target application OrangeHRM is reachable in the test environment",
+      "User is in an authorized initial state on mobile"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Navigate to OrangeHRM PIM Employee Search by Name and Employment Status interface on mobile",
+        "expectedResult": "PIM Employee Search by Name and Employment Status view is loaded and ready for interaction"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Enter required input data according to standard positive criteria",
+        "expectedResult": "Inputs are populated and validated without errors"
+      },
+      {
+        "stepNumber": 3,
+        "action": "Submit or confirm the primary action",
+        "expectedResult": "Entering a partial or full name in the \"Employee Name\" autocomplete field suggests matching active records."
+      },
+      {
+        "stepNumber": 4,
+        "action": "Verify acceptance condition: Selecting \"Full-Time Contract\" filter displays only employees currently engaged under full-time contracts.",
+        "expectedResult": "Selecting \"Full-Time Contract\" filter displays only employees currently engaged under full-time contracts."
+      },
+      {
+        "stepNumber": 5,
+        "action": "Verify acceptance condition: Clicking \"Search\" populates the results data table with employee ID, first name, last name, and job title.",
+        "expectedResult": "Clicking \"Search\" populates the results data table with employee ID, first name, last name, and job title."
+      },
+      {
+        "stepNumber": 6,
+        "action": "Verify acceptance condition: Clicking \"Reset\" clears all search parameters and reloads the default paginated employee list.",
+        "expectedResult": "Clicking \"Reset\" clears all search parameters and reloads the default paginated employee list."
+      }
+    ],
+    "expectedResults": [
+      "Clicking \"Reset\" clears all search parameters and reloads the default paginated employee list."
+    ],
+    "priority": "high",
+    "testType": "functional",
+    "targetPlatform": "mobile",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-EMP-SEARCH-002",
+    "specId": "SPEC-EMP-SEARCH-001",
+    "title": "Verify exception handling: Exception 1: Searching for a non-existent identifier ",
+    "preconditions": [
+      "Target application OrangeHRM is reachable in the test environment",
+      "User is in an authorized initial state on mobile"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Set up scenario where Trigger condition related to: Searching for a non-existent identifier displays a \"No Records Found\" empty state indicator.",
+        "expectedResult": "Condition is established"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Trigger action under exception condition",
+        "expectedResult": "Display appropriate validation error or prevention mechanism (Searching for a non-existent identifier displays a \"No Records Found\" empty state indicator.)"
+      }
+    ],
+    "expectedResults": [
+      "Display appropriate validation error or prevention mechanism (Searching for a non-existent identifier displays a \"No Records Found\" empty state indicator.)"
+    ],
+    "priority": "medium",
+    "testType": "negative",
+    "targetPlatform": "mobile",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-EMP-SEARCH-003",
+    "specId": "SPEC-EMP-SEARCH-001",
+    "title": "Verify alternate flow: Alternate Flow: Secondary action pathway",
+    "preconditions": [
+      "Target application OrangeHRM is reachable in the test environment",
+      "User is in an authorized initial state on mobile"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Navigate to OrangeHRM secondary options",
+        "expectedResult": "Step 1 completes as expected"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Perform alternate action sequence",
+        "expectedResult": "Step 2 completes as expected"
+      },
+      {
+        "stepNumber": 3,
+        "action": "Verify alternative state matches expected behavior",
+        "expectedResult": "Step 3 completes as expected"
+      }
+    ],
+    "expectedResults": [
+      "Alternate pathway Alternate Flow: Secondary action pathway completes successfully"
+    ],
+    "priority": "medium",
+    "testType": "functional",
+    "targetPlatform": "mobile",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-EMP-SEARCH-004",
+    "specId": "SPEC-EMP-SEARCH-001",
+    "title": "Verify data validation rules for PIM Employee Search by Name and Employment Status",
+    "preconditions": [
+      "Target application OrangeHRM is reachable in the test environment",
+      "User is in an authorized initial state on mobile"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Attempt input violating rules for: primaryIdentifier (required, non-empty)",
+        "expectedResult": "Validation error displayed, submission blocked"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Provide compliant inputs for: primaryIdentifier (required, non-empty)",
+        "expectedResult": "Inputs accepted without errors"
+      }
+    ],
+    "expectedResults": [
+      "System enforces input data requirements correctly"
+    ],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "mobile",
+    "automationSuitability": "automatable"
+  }
+]

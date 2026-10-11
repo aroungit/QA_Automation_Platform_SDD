@@ -1,0 +1,157 @@
+[
+  {
+    "id": "TC-LOGIN-001",
+    "specId": "SPEC-LOGIN-004",
+    "title": "Verify positive main flow for Admin User Authentication & Role-Based Access",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user navigates to the OrangeHRM login page using a supported web browser."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Enter a valid administrator username in the Username field.",
+        "expectedResult": "Username field contains the entered value."
+      },
+      {
+        "stepNumber": 2,
+        "action": "Enter the corresponding password in the Password field.",
+        "expectedResult": "Password field contains the entered value (masked)."
+      },
+      {
+        "stepNumber": 3,
+        "action": "Click the \"Login\" button.",
+        "expectedResult": "System validates credentials."
+      },
+      {
+        "stepNumber": 4,
+        "action": "System authenticates the user.",
+        "expectedResult": "User is redirected to the Dashboard page with a personalized greeting."
+      }
+    ],
+    "expectedResults": [
+      "User is redirected to the Dashboard page with a personalized greeting."
+    ],
+    "priority": "high",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-002",
+    "specId": "SPEC-LOGIN-004",
+    "title": "Verify exception handling: Empty Fields Validation",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user navigates to the OrangeHRM login page using a supported web browser."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Set up scenario where Username or Password field is left empty and the Login button is pressed.",
+        "expectedResult": "Condition is established"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Trigger action under exception condition",
+        "expectedResult": "Display inline validation message \"Required\" next to each empty field and keep the user on the login page."
+      }
+    ],
+    "expectedResults": [
+      "Display inline validation message \"Required\" next to each empty field and keep the user on the login page."
+    ],
+    "priority": "medium",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-003",
+    "specId": "SPEC-LOGIN-004",
+    "title": "Verify exception handling: Invalid Credentials",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user navigates to the OrangeHRM login page using a supported web browser."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Set up scenario where Entered username and/or password do not match an active administrator account.",
+        "expectedResult": "Condition is established"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Trigger action under exception condition",
+        "expectedResult": "Display an inline error message \"Invalid credentials\" above the login form and remain on the login page."
+      }
+    ],
+    "expectedResults": [
+      "Display an inline error message \"Invalid credentials\" above the login form and remain on the login page."
+    ],
+    "priority": "medium",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-004",
+    "specId": "SPEC-LOGIN-004",
+    "title": "Verify alternate flow: Forgot Password Flow",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user navigates to the OrangeHRM login page using a supported web browser."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "User clicks the \"Forgot your password?\" link located beneath the login form.",
+        "expectedResult": "Step 1 completes as expected"
+      },
+      {
+        "stepNumber": 2,
+        "action": "System navigates to the Password Reset Request screen.",
+        "expectedResult": "Step 2 completes as expected"
+      },
+      {
+        "stepNumber": 3,
+        "action": "User follows the password reset process as defined in the password recovery module.",
+        "expectedResult": "Step 3 completes as expected"
+      }
+    ],
+    "expectedResults": [
+      "Alternate pathway Forgot Password Flow completes successfully"
+    ],
+    "priority": "medium",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-005",
+    "specId": "SPEC-LOGIN-004",
+    "title": "Verify data validation rules for Admin User Authentication & Role-Based Access",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user navigates to the OrangeHRM login page using a supported web browser."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Attempt input violating rules for: Username (Required; maximum length 50 characters; must match an existing admin account identifier.), Password (Required; minimum length 8 characters; must be stored and compared using secure hashing (e.g., bcrypt).)",
+        "expectedResult": "Validation error displayed, submission blocked"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Provide compliant inputs for: Username (Required; maximum length 50 characters; must match an existing admin account identifier.), Password (Required; minimum length 8 characters; must be stored and compared using secure hashing (e.g., bcrypt).)",
+        "expectedResult": "Inputs accepted without errors"
+      }
+    ],
+    "expectedResults": [
+      "System enforces input data requirements correctly"
+    ],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  }
+]

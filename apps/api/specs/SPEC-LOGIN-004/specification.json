@@ -1,0 +1,80 @@
+{
+  "specId": "SPEC-LOGIN-004",
+  "title": "Admin User Authentication & Role-Based Access",
+  "businessObjective": "Allow Human Resources Administrators to securely access OrangeHRM with elevated privileges to manage personnel records, configure system settings, and approve requests.",
+  "actors": [
+    "Human Resources Administrator"
+  ],
+  "preconditions": [
+    "The user possesses a valid administrator account in OrangeHRM.",
+    "The user navigates to the OrangeHRM login page using a supported web browser."
+  ],
+  "mainFlow": [
+    {
+      "step": 1,
+      "action": "Enter a valid administrator username in the Username field.",
+      "expected": "Username field contains the entered value."
+    },
+    {
+      "step": 2,
+      "action": "Enter the corresponding password in the Password field.",
+      "expected": "Password field contains the entered value (masked)."
+    },
+    {
+      "step": 3,
+      "action": "Click the \"Login\" button.",
+      "expected": "System validates credentials."
+    },
+    {
+      "step": 4,
+      "action": "System authenticates the user.",
+      "expected": "User is redirected to the Dashboard page with a personalized greeting."
+    }
+  ],
+  "alternateFlows": [
+    {
+      "name": "Forgot Password Flow",
+      "steps": [
+        "User clicks the \"Forgot your password?\" link located beneath the login form.",
+        "System navigates to the Password Reset Request screen.",
+        "User follows the password reset process as defined in the password recovery module."
+      ]
+    }
+  ],
+  "exceptionFlows": [
+    {
+      "name": "Empty Fields Validation",
+      "condition": "Username or Password field is left empty and the Login button is pressed.",
+      "action": "Display inline validation message \"Required\" next to each empty field and keep the user on the login page."
+    },
+    {
+      "name": "Invalid Credentials",
+      "condition": "Entered username and/or password do not match an active administrator account.",
+      "action": "Display an inline error message \"Invalid credentials\" above the login form and remain on the login page."
+    }
+  ],
+  "dataRequirements": [
+    {
+      "field": "Username",
+      "type": "string",
+      "rules": "Required; maximum length 50 characters; must match an existing admin account identifier."
+    },
+    {
+      "field": "Password",
+      "type": "string",
+      "rules": "Required; minimum length 8 characters; must be stored and compared using secure hashing (e.g., bcrypt)."
+    }
+  ],
+  "acceptanceCriteria": [
+    "Valid username and password should authenticate successfully and redirect to the Dashboard page.",
+    "Submitting empty username or password fields should display inline validation messages \"Required\".",
+    "Clicking \"Forgot your password?\" should navigate to the password reset request screen."
+  ],
+  "nonFunctionalRequirements": [
+    "All authentication traffic must be transmitted over HTTPS (TLS 1.2 or higher).",
+    "Login response time shall not exceed 2 seconds under normal load.",
+    "Account lockout after 5 consecutive failed login attempts to mitigate brute‑force attacks."
+  ],
+  "targetApp": "OrangeHRM",
+  "environment": "default"
+}

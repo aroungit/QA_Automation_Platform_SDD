@@ -1,0 +1,70 @@
+{
+  "specId": "SPEC-EMP-SEARCH-001",
+  "status": "Approved",
+  "reviewer": "Lead QA Engineer",
+  "comments": "Approved by reviewer",
+  "approvedTestCases": [
+    "TC-EMP-SEARCH-001",
+    "TC-EMP-SEARCH-002",
+    "TC-EMP-SEARCH-003",
+    "TC-EMP-SEARCH-004"
+  ],
+  "timestamp": "2026-10-11T09:25:16.186Z",
+  "history": [
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Draft",
+      "reviewer": "System",
+      "comments": "Specification created via user story intake",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-11T03:25:50.552Z"
+    },
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Under Review",
+      "reviewer": "Lead QA Engineer",
+      "comments": "",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-11T03:27:30.199Z"
+    },
+    {
+      "fromStatus": "Under Review",
+      "toStatus": "Approved",
+      "reviewer": "Lead QA Engineer",
+      "comments": "Approved by reviewer",
+      "approvedTestCases": [
+        "TC-EMP-SEARCH-001",
+        "TC-EMP-SEARCH-002",
+        "TC-EMP-SEARCH-003",
+        "TC-EMP-SEARCH-004"
+      ],
+      "timestamp": "2026-10-11T03:27:34.744Z"
+    },
+    {
+      "fromStatus": "Approved",
+      "toStatus": "Approved",
+      "reviewer": "Lead QA Engineer",
+      "comments": "Approved by reviewer",
+      "approvedTestCases": [
+        "TC-EMP-SEARCH-001",
+        "TC-EMP-SEARCH-002",
+        "TC-EMP-SEARCH-003",
+        "TC-EMP-SEARCH-004"
+      ],
+      "timestamp": "2026-10-11T09:23:29.251Z"
+    },
+    {
+      "fromStatus": "Approved",
+      "toStatus": "Approved",
+      "reviewer": "Lead QA Engineer",
+      "comments": "Approved by reviewer",
+      "approvedTestCases": [
+        "TC-EMP-SEARCH-001",
+        "TC-EMP-SEARCH-002",
+        "TC-EMP-SEARCH-003",
+        "TC-EMP-SEARCH-004"
+      ],
+      "timestamp": "2026-10-11T09:25:16.186Z"
+    }
+  ]
+}

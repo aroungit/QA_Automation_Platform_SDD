@@ -1,0 +1,81 @@
+{
+  "specId": "SPEC-EMP-SEARCH-001",
+  "title": "PIM Employee Search by Name and Employment Status",
+  "businessObjective": "Enable HR Manager to search and filter employees in the PIM module by their full name in order to I can quickly access individual profiles and verify contract types.",
+  "actors": [
+    "HR Manager"
+  ],
+  "preconditions": [
+    "Target application OrangeHRM is reachable in the test environment",
+    "User is in an authorized initial state on mobile"
+  ],
+  "mainFlow": [
+    {
+      "step": 1,
+      "action": "Navigate to OrangeHRM PIM Employee Search by Name and Employment Status interface on mobile",
+      "expected": "PIM Employee Search by Name and Employment Status view is loaded and ready for interaction"
+    },
+    {
+      "step": 2,
+      "action": "Enter required input data according to standard positive criteria",
+      "expected": "Inputs are populated and validated without errors"
+    },
+    {
+      "step": 3,
+      "action": "Submit or confirm the primary action",
+      "expected": "Entering a partial or full name in the \"Employee Name\" autocomplete field suggests matching active records."
+    },
+    {
+      "step": 4,
+      "action": "Verify acceptance condition: Selecting \"Full-Time Contract\" filter displays only employees currently engaged under full-time contracts.",
+      "expected": "Selecting \"Full-Time Contract\" filter displays only employees currently engaged under full-time contracts."
+    },
+    {
+      "step": 5,
+      "action": "Verify acceptance condition: Clicking \"Search\" populates the results data table with employee ID, first name, last name, and job title.",
+      "expected": "Clicking \"Search\" populates the results data table with employee ID, first name, last name, and job title."
+    },
+    {
+      "step": 6,
+      "action": "Verify acceptance condition: Clicking \"Reset\" clears all search parameters and reloads the default paginated employee list.",
+      "expected": "Clicking \"Reset\" clears all search parameters and reloads the default paginated employee list."
+    }
+  ],
+  "alternateFlows": [
+    {
+      "name": "Alternate Flow: Secondary action pathway",
+      "steps": [
+        "Navigate to OrangeHRM secondary options",
+        "Perform alternate action sequence",
+        "Verify alternative state matches expected behavior"
+      ]
+    }
+  ],
+  "exceptionFlows": [
+    {
+      "name": "Exception 1: Searching for a non-existent identifier ",
+      "condition": "Trigger condition related to: Searching for a non-existent identifier displays a \"No Records Found\" empty state indicator.",
+      "action": "Display appropriate validation error or prevention mechanism (Searching for a non-existent identifier displays a \"No Records Found\" empty state indicator.)"
+    }
+  ],
+  "dataRequirements": [
+    {
+      "field": "primaryIdentifier",
+      "type": "string",
+      "rules": "required, non-empty"
+    }
+  ],
+  "acceptanceCriteria": [
+    "Entering a partial or full name in the \"Employee Name\" autocomplete field suggests matching active records.",
+    "Selecting \"Full-Time Contract\" filter displays only employees currently engaged under full-time contracts.",
+    "Clicking \"Search\" populates the results data table with employee ID, first name, last name, and job title.",
+    "Clicking \"Reset\" clears all search parameters and reloads the default paginated employee list.",
+    "Searching for a non-existent identifier displays a \"No Records Found\" empty state indicator."
+  ],
+  "nonFunctionalRequirements": [
+    "Operations should respond within 3000ms",
+    "UI elements must have accessible and stable test selectors"
+  ],
+  "targetApp": "OrangeHRM",
+  "environment": "default"
+}

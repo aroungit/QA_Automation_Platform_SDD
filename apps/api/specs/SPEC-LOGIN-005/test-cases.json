@@ -1,0 +1,218 @@
+[
+  {
+    "id": "TC-LOGIN-001",
+    "specId": "SPEC-LOGIN-005",
+    "title": "Verify positive main flow for Admin User Authentication & Role-Based Access",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user is on the OrangeHRM login page."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Enter a valid administrator username in the Username field.",
+        "expectedResult": "Username field accepts the input."
+      },
+      {
+        "stepNumber": 2,
+        "action": "Enter the corresponding valid password in the Password field.",
+        "expectedResult": "Password field accepts the input."
+      },
+      {
+        "stepNumber": 3,
+        "action": "Click the \"Login\" button.",
+        "expectedResult": "System validates the credentials."
+      },
+      {
+        "stepNumber": 4,
+        "action": "System authenticates the user.",
+        "expectedResult": "User is redirected to the Dashboard page."
+      }
+    ],
+    "expectedResults": [
+      "User is redirected to the Dashboard page."
+    ],
+    "priority": "high",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-002",
+    "specId": "SPEC-LOGIN-005",
+    "title": "Verify exception handling: System Unavailable",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user is on the OrangeHRM login page."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Set up scenario where Authentication service is unreachable or returns an error.",
+        "expectedResult": "Condition is established"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Trigger action under exception condition",
+        "expectedResult": "Display a generic error message \"Unable to process login at this time. Please try again later.\" and log the incident for investigation."
+      }
+    ],
+    "expectedResults": [
+      "Display a generic error message \"Unable to process login at this time. Please try again later.\" and log the incident for investigation."
+    ],
+    "priority": "medium",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-003",
+    "specId": "SPEC-LOGIN-005",
+    "title": "Verify exception handling: Session Timeout During Login",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user is on the OrangeHRM login page."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Set up scenario where User remains idle on the login page beyond the session timeout limit.",
+        "expectedResult": "Condition is established"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Trigger action under exception condition",
+        "expectedResult": "Refresh the login page and prompt the user to re-enter credentials."
+      }
+    ],
+    "expectedResults": [
+      "Refresh the login page and prompt the user to re-enter credentials."
+    ],
+    "priority": "medium",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-004",
+    "specId": "SPEC-LOGIN-005",
+    "title": "Verify alternate flow: Invalid Credentials",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user is on the OrangeHRM login page."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "User enters a username and/or password that does not match any administrator account.",
+        "expectedResult": "Step 1 completes as expected"
+      },
+      {
+        "stepNumber": 2,
+        "action": "User clicks the \"Login\" button.",
+        "expectedResult": "Step 2 completes as expected"
+      },
+      {
+        "stepNumber": 3,
+        "action": "System validates the credentials, determines they are invalid, and displays an error alert \"Invalid credentials\" without indicating which field is incorrect.",
+        "expectedResult": "Step 3 completes as expected"
+      }
+    ],
+    "expectedResults": [
+      "Alternate pathway Invalid Credentials completes successfully"
+    ],
+    "priority": "medium",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-005",
+    "specId": "SPEC-LOGIN-005",
+    "title": "Verify alternate flow: Missing Required Fields",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user is on the OrangeHRM login page."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "User leaves the Username and/or Password field empty.",
+        "expectedResult": "Step 1 completes as expected"
+      },
+      {
+        "stepNumber": 2,
+        "action": "User clicks the \"Login\" button.",
+        "expectedResult": "Step 2 completes as expected"
+      },
+      {
+        "stepNumber": 3,
+        "action": "System detects empty required fields and displays inline validation messages \"Required\" next to each empty field.",
+        "expectedResult": "Step 3 completes as expected"
+      }
+    ],
+    "expectedResults": [
+      "Alternate pathway Missing Required Fields completes successfully"
+    ],
+    "priority": "medium",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-006",
+    "specId": "SPEC-LOGIN-005",
+    "title": "Verify alternate flow: Forgot Password Navigation",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user is on the OrangeHRM login page."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "User clicks the \"Forgot your password?\" link.",
+        "expectedResult": "Step 1 completes as expected"
+      },
+      {
+        "stepNumber": 2,
+        "action": "System navigates to the password reset request screen.",
+        "expectedResult": "Step 2 completes as expected"
+      }
+    ],
+    "expectedResults": [
+      "Alternate pathway Forgot Password Navigation completes successfully"
+    ],
+    "priority": "medium",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-007",
+    "specId": "SPEC-LOGIN-005",
+    "title": "Verify data validation rules for Admin User Authentication & Role-Based Access",
+    "preconditions": [
+      "The user possesses a valid administrator account in OrangeHRM.",
+      "The user is on the OrangeHRM login page."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Attempt input violating rules for: username (Required; maximum length 50 characters; must match an existing administrator account.), password (Required; minimum length 8 characters; must be stored and transmitted using secure hashing and TLS.)",
+        "expectedResult": "Validation error displayed, submission blocked"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Provide compliant inputs for: username (Required; maximum length 50 characters; must match an existing administrator account.), password (Required; minimum length 8 characters; must be stored and transmitted using secure hashing and TLS.)",
+        "expectedResult": "Inputs accepted without errors"
+      }
+    ],
+    "expectedResults": [
+      "System enforces input data requirements correctly"
+    ],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  }
+]

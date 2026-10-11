@@ -1,0 +1,17 @@
+{
+  "title": "PIM Employee Search by Name and Employment Status",
+  "story": "As an HR Manager, I want to search and filter employees in the PIM module by their full name, employee ID, and employment status so that I can quickly access individual profiles and verify contract types.",
+  "acceptanceCriteria": [
+    "Entering a partial or full name in the \"Employee Name\" autocomplete field suggests matching active records.",
+    "Selecting \"Full-Time Contract\" filter displays only employees currently engaged under full-time contracts.",
+    "Clicking \"Search\" populates the results data table with employee ID, first name, last name, and job title.",
+    "Clicking \"Reset\" clears all search parameters and reloads the default paginated employee list.",
+    "Searching for a non-existent identifier displays a \"No Records Found\" empty state indicator."
+  ],
+  "priority": "high",
+  "platform": "mobile",
+  "targetApp": "OrangeHRM",
+  "id": "SPEC-EMP-SEARCH-001",
+  "createdAt": "2026-10-11T03:25:50.552Z",
+  "updatedAt": "2026-10-11T03:25:50.552Z"
+}

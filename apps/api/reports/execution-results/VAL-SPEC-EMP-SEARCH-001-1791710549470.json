@@ -1,0 +1,130 @@
+{
+  "reportId": "VAL-SPEC-EMP-SEARCH-001-1791710549470",
+  "specId": "SPEC-EMP-SEARCH-001",
+  "timestamp": "2026-10-11T09:22:29.470Z",
+  "platform": "mobile",
+  "overallStatus": "FAILED",
+  "eligibleForPromotion": false,
+  "staticValidation": {
+    "passed": true,
+    "typeScriptCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "lintCheck": {
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "selectorValidation": {
+      "passed": true,
+      "validCount": 9,
+      "warnings": [],
+      "locatorsFound": [
+        "web/pages/DashboardPage.ts: getByRole('heading'",
+        "web/pages/DashboardPage.ts: getByRole('menuitem'",
+        "web/pages/LoginPage.ts: getByRole('button'",
+        "web/pages/LoginPage.ts: getByRole('alert'",
+        "web/pages/LoginPage.ts: getByPlaceholder('Username'",
+        "web/pages/LoginPage.ts: getByPlaceholder('Password'",
+        "web/pages/LoginPage.ts: getByText(/required/i",
+        "web/pages/LoginPage.ts: getByText(/forgot your password/i",
+        "web/utils/test-helpers.ts: getByRole('alert'"
+      ]
+    },
+    "importValidation": {
+      "passed": true,
+      "errors": [],
+      "imports": [
+        "playwright.config.ts -> @playwright/test",
+        "web/pages/DashboardPage.ts -> @playwright/test",
+        "web/pages/LoginPage.ts -> @playwright/test",
+        "web/utils/test-helpers.ts -> @playwright/test"
+      ]
+    }
+  },
+  "dynamicValidation": {
+    "passed": false,
+    "executed": false,
+    "totalTests": 0,
+    "passedCount": 0,
+    "failedCount": 0,
+    "skippedCount": 0,
+    "durationMs": 1,
+    "mode": "simulated",
+    "tests": [],
+    "artifacts": {
+      "screenshots": [],
+      "traces": [],
+      "reports": []
+    },
+    "error": "No test files found in workspace for specification \"SPEC-EMP-SEARCH-001\"."
+  },
+  "conformanceCheck": {
+    "passed": false,
+    "approvedTestCaseIds": [
+      "TC-EMP-SEARCH-001",
+      "TC-EMP-SEARCH-002",
+      "TC-EMP-SEARCH-003",
+      "TC-EMP-SEARCH-004"
+    ],
+    "executedTestCaseIds": [],
+    "covered": [],
+    "missing": [
+      "TC-EMP-SEARCH-001",
+      "TC-EMP-SEARCH-002",
+      "TC-EMP-SEARCH-003",
+      "TC-EMP-SEARCH-004"
+    ],
+    "unmapped": [],
+    "failedTests": [],
+    "details": [
+      "Approved test case \"TC-EMP-SEARCH-001\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-EMP-SEARCH-002\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-EMP-SEARCH-003\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-EMP-SEARCH-004\" has no corresponding executed test script (§3.6)."
+    ]
+  },
+  "healingSummary": {
+    "attempted": true,
+    "totalAttempts": 3,
+    "maxAttempts": 3,
+    "successful": false,
+    "attempts": [
+      {
+        "attemptNumber": 1,
+        "timestamp": "2026-10-11T09:22:26.746Z",
+        "stage": "dynamic",
+        "diagnosis": "No test files found in workspace for specification \"SPEC-EMP-SEARCH-001\".",
+        "targetFiles": [],
+        "changesApplied": [],
+        "success": false
+      },
+      {
+        "attemptNumber": 2,
+        "timestamp": "2026-10-11T09:22:28.153Z",
+        "stage": "dynamic",
+        "diagnosis": "No test files found in workspace for specification \"SPEC-EMP-SEARCH-001\".",
+        "targetFiles": [],
+        "changesApplied": [],
+        "success": false
+      },
+      {
+        "attemptNumber": 3,
+        "timestamp": "2026-10-11T09:22:29.470Z",
+        "stage": "dynamic",
+        "diagnosis": "No test files found in workspace for specification \"SPEC-EMP-SEARCH-001\".",
+        "targetFiles": [],
+        "changesApplied": [],
+        "success": false
+      }
+    ]
+  },
+  "metadata": {
+    "targetApp": "OrangeHRM",
+    "environment": "default",
+    "provider": "groq",
+    "model": "llama-3.3-70b-versatile",
+    "executionMode": "simulated"
+  }
+}
