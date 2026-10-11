@@ -229,7 +229,9 @@ export const ValidationReportView: React.FC<ValidationReportViewProps> = ({
             >
               <Icon className="w-4 h-4 shrink-0" />
               <span>{tab.label}</span>
-              <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${tab.badgeColor}`}>
+              <span
+                className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${tab.badgeColor}`}
+              >
                 {tab.badge}
               </span>
             </button>
@@ -261,9 +263,7 @@ export const ValidationReportView: React.FC<ValidationReportViewProps> = ({
                 </span>
               </div>
               <div className="p-3 bg-rose-50 dark:bg-rose-950/30 rounded-lg border border-rose-200 dark:border-rose-800/50">
-                <span className="text-rose-700 dark:text-rose-300 font-medium block">
-                  Failed
-                </span>
+                <span className="text-rose-700 dark:text-rose-300 font-medium block">Failed</span>
                 <span className="text-base font-bold text-rose-800 dark:text-rose-200">
                   {report.dynamicValidation.failedCount}
                 </span>
@@ -392,7 +392,10 @@ export const ValidationReportView: React.FC<ValidationReportViewProps> = ({
                                 <button
                                   type="button"
                                   onClick={() =>
-                                    copyToClipboard(test.stack || test.error || '', `err-${testKey}`)
+                                    copyToClipboard(
+                                      test.stack || test.error || '',
+                                      `err-${testKey}`,
+                                    )
                                   }
                                   className="text-[11px] text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-1"
                                 >
@@ -599,8 +602,8 @@ export const ValidationReportView: React.FC<ValidationReportViewProps> = ({
                 )}
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400">
-                Verified that only safe local modules and allowed framework packages (@playwright/test)
-                are imported.
+                Verified that only safe local modules and allowed framework packages
+                (@playwright/test) are imported.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 font-mono text-[11px] max-h-40 overflow-y-auto">
                 {report.staticValidation.importValidation.imports.map((imp, idx) => (
@@ -778,9 +781,9 @@ export const ValidationReportView: React.FC<ValidationReportViewProps> = ({
                     Playwright Healer Agent (§3.6)
                   </h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                    Autonomous self-healing loop: parses test failure stack traces, diagnoses
-                    broken selectors or compile errors, generates diffs, and re-validates with
-                    bounded retries.
+                    Autonomous self-healing loop: parses test failure stack traces, diagnoses broken
+                    selectors or compile errors, generates diffs, and re-validates with bounded
+                    retries.
                   </p>
                 </div>
 

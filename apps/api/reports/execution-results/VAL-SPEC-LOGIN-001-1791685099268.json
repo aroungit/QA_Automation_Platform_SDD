@@ -1,0 +1,196 @@
+{
+  "reportId": "VAL-SPEC-LOGIN-001-1791685099268",
+  "specId": "SPEC-LOGIN-001",
+  "timestamp": "2026-10-11T02:18:19.268Z",
+  "platform": "web",
+  "overallStatus": "PASSED",
+  "eligibleForPromotion": true,
+  "staticValidation": {
+    "passed": true,
+    "typeScriptCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "lintCheck": {
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "selectorValidation": {
+      "passed": true,
+      "validCount": 9,
+      "warnings": [],
+      "locatorsFound": [
+        "web/pages/DashboardPage.ts: getByRole('heading'",
+        "web/pages/DashboardPage.ts: getByRole('menuitem'",
+        "web/pages/LoginPage.ts: getByRole('button'",
+        "web/pages/LoginPage.ts: getByRole('alert'",
+        "web/pages/LoginPage.ts: getByPlaceholder('Username'",
+        "web/pages/LoginPage.ts: getByPlaceholder('Password'",
+        "web/pages/LoginPage.ts: getByText(/required/i",
+        "web/pages/LoginPage.ts: getByText(/forgot your password/i",
+        "web/utils/test-helpers.ts: getByRole('alert'"
+      ]
+    },
+    "importValidation": {
+      "passed": true,
+      "errors": [],
+      "imports": [
+        "playwright.config.ts -> @playwright/test",
+        "web/pages/DashboardPage.ts -> @playwright/test",
+        "web/pages/LoginPage.ts -> @playwright/test",
+        "web/tests/SPEC-LOGIN-001/SPEC-LOGIN-001.spec.ts -> @playwright/test",
+        "web/tests/SPEC-LOGIN-001/SPEC-LOGIN-001.spec.ts -> ../../pages/LoginPage",
+        "web/tests/SPEC-LOGIN-001/SPEC-LOGIN-001.spec.ts -> ../../pages/DashboardPage",
+        "web/tests/SPEC-LOGIN-001/SPEC-LOGIN-001.spec.ts -> ../../fixtures/auth-data.json",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-001.spec.ts -> @playwright/test",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-001.spec.ts -> ../../pages/LoginPage",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-001.spec.ts -> ../../pages/DashboardPage",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-001.spec.ts -> ../../fixtures/auth-data.json",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-002.spec.ts -> @playwright/test",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-002.spec.ts -> ../../pages/LoginPage",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-002.spec.ts -> ../../pages/DashboardPage",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-002.spec.ts -> ../../fixtures/auth-data.json",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-003.spec.ts -> @playwright/test",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-003.spec.ts -> ../../pages/LoginPage",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-003.spec.ts -> ../../pages/DashboardPage",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-003.spec.ts -> ../../fixtures/auth-data.json",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-004.spec.ts -> @playwright/test",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-004.spec.ts -> ../../pages/LoginPage",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-004.spec.ts -> ../../pages/DashboardPage",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-004.spec.ts -> ../../fixtures/auth-data.json",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-005.spec.ts -> @playwright/test",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-005.spec.ts -> ../../pages/LoginPage",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-005.spec.ts -> ../../pages/DashboardPage",
+        "web/tests/SPEC-LOGIN-001/TC-LOGIN-005.spec.ts -> ../../fixtures/auth-data.json",
+        "web/utils/test-helpers.ts -> @playwright/test"
+      ]
+    }
+  },
+  "dynamicValidation": {
+    "passed": true,
+    "executed": true,
+    "totalTests": 6,
+    "passedCount": 6,
+    "failedCount": 0,
+    "skippedCount": 0,
+    "durationMs": 4,
+    "mode": "simulated",
+    "tests": [
+      {
+        "testCaseId": "TC-LOGIN-001",
+        "title": "TC-LOGIN-001: Verify positive main flow for Admin User Authentication & Role-Based Access",
+        "status": "passed",
+        "durationMs": 276,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      },
+      {
+        "testCaseId": "TC-LOGIN-001",
+        "title": "TC-LOGIN-001: Verify positive main flow for Admin User Authentication & Role-Based Access",
+        "status": "passed",
+        "durationMs": 216,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      },
+      {
+        "testCaseId": "TC-LOGIN-002",
+        "title": "TC-LOGIN-002: Verify exception handling: Exception 1: Invalid username or password should disp",
+        "status": "passed",
+        "durationMs": 186,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      },
+      {
+        "testCaseId": "TC-LOGIN-003",
+        "title": "TC-LOGIN-003: Verify exception handling: Exception 2: Submitting empty username or password fi",
+        "status": "passed",
+        "durationMs": 251,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      },
+      {
+        "testCaseId": "TC-LOGIN-004",
+        "title": "TC-LOGIN-004: Verify alternate flow: Alternate Flow: Secondary action pathway",
+        "status": "passed",
+        "durationMs": 356,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      },
+      {
+        "testCaseId": "TC-LOGIN-005",
+        "title": "TC-LOGIN-005: Verify data validation rules for Admin User Authentication & Role-Based Access",
+        "status": "passed",
+        "durationMs": 455,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      }
+    ],
+    "artifacts": {
+      "screenshots": [],
+      "traces": [],
+      "reports": [
+        "test-results/results.json"
+      ]
+    }
+  },
+  "conformanceCheck": {
+    "passed": true,
+    "approvedTestCaseIds": [
+      "TC-LOGIN-001",
+      "TC-LOGIN-002",
+      "TC-LOGIN-003",
+      "TC-LOGIN-004",
+      "TC-LOGIN-005"
+    ],
+    "executedTestCaseIds": [
+      "TC-LOGIN-001",
+      "TC-LOGIN-002",
+      "TC-LOGIN-003",
+      "TC-LOGIN-004",
+      "TC-LOGIN-005"
+    ],
+    "covered": [
+      "TC-LOGIN-001",
+      "TC-LOGIN-002",
+      "TC-LOGIN-003",
+      "TC-LOGIN-004",
+      "TC-LOGIN-005"
+    ],
+    "missing": [],
+    "unmapped": [],
+    "failedTests": [],
+    "details": [
+      "Approved test case \"TC-LOGIN-001\" is covered and passed.",
+      "Approved test case \"TC-LOGIN-002\" is covered and passed.",
+      "Approved test case \"TC-LOGIN-003\" is covered and passed.",
+      "Approved test case \"TC-LOGIN-004\" is covered and passed.",
+      "Approved test case \"TC-LOGIN-005\" is covered and passed."
+    ]
+  },
+  "metadata": {
+    "targetApp": "OrangeHRM",
+    "environment": "default",
+    "provider": "groq",
+    "model": "llama-3.3-70b-versatile",
+    "executionMode": "simulated"
+  }
+}

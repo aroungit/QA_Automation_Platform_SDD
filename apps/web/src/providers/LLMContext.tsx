@@ -125,6 +125,8 @@ export const LLMProviderComponent: React.FC<{ children: React.ReactNode }> = ({ 
   );
 };
 
+export const LLMProvider = LLMProviderComponent;
+
 export function useLLM(): LLMContextType {
   const context = useContext(LLMContext);
   if (!context) {

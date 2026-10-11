@@ -17,23 +17,37 @@ const STORAGE_KEY = 'qaa-theme';
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
     if (typeof window === 'undefined') return 'system';
-    const saved = localStorage.getItem(STORAGE_KEY) as Theme | null;
-    return saved === 'light' || saved === 'dark' || saved === 'system' ? saved : 'system';
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY) as Theme | null;
+      return saved === 'light' || saved === 'dark' || saved === 'system' ? saved : 'system';
+    } catch {
+      return 'system';
+    }
   });
 
   const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(() => {
     if (typeof window === 'undefined') return 'dark';
     if (theme === 'light') return 'light';
     if (theme === 'dark') return 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    try {
+      return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches ? 'dark' : 'light';
+    } catch {
+      return 'dark';
+    }
   });
 
   useEffect(() => {
     const root = document.documentElement;
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    let mediaQuery: MediaQueryList | null = null;
+    try {
+      mediaQuery = window.matchMedia?.('(prefers-color-scheme: dark)') ?? null;
+    } catch {
+      mediaQuery = null;
+    }
 
     const updateTheme = () => {
-      const activeResolved = theme === 'system' ? (mediaQuery.matches ? 'dark' : 'light') : theme;
+      const isSystemDark = mediaQuery ? mediaQuery.matches : false;
+      const activeResolved = theme === 'system' ? (isSystemDark ? 'dark' : 'light') : theme;
 
       setResolvedTheme(activeResolved);
 
@@ -46,19 +60,35 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
     updateTheme();
 
+    if (!mediaQuery) return;
+
     const listener = () => {
       if (theme === 'system') {
         updateTheme();
       }
     };
 
-    mediaQuery.addEventListener('change', listener);
-    return () => mediaQuery.removeEventListener('change', listener);
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', listener);
+      return () => mediaQuery?.removeEventListener('change', listener);
+    } else if ('addListener' in mediaQuery) {
+      // Legacy Safari / older browsers
+      (mediaQuery as unknown as { addListener: (cb: () => void) => void }).addListener(listener);
+      return () => {
+        (mediaQuery as unknown as { removeListener: (cb: () => void) => void }).removeListener(
+          listener,
+        );
+      };
+    }
   }, [theme]);
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem(STORAGE_KEY, newTheme);
+    try {
+      localStorage.setItem(STORAGE_KEY, newTheme);
+    } catch {
+      // Storage unavailable (e.g. private mode)
+    }
   };
 
   const toggleTheme = () => {

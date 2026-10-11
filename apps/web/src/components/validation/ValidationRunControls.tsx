@@ -77,7 +77,7 @@ export const ValidationRunControls: React.FC<ValidationRunControlsProps> = ({
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={() => setShowConfig(!showConfig)}
@@ -119,13 +119,13 @@ export const ValidationRunControls: React.FC<ValidationRunControlsProps> = ({
         <div className="p-3 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-lg flex items-start gap-2.5 text-xs text-amber-800 dark:text-amber-200">
           <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5 text-amber-600 dark:text-amber-400" />
           <div className="space-y-1">
-            <span className="font-semibold">
-              Approval Required Before Validation (§3.4, §3.6)
-            </span>
+            <span className="font-semibold">Approval Required Before Validation (§3.4, §3.6)</span>
             <p className="text-amber-700 dark:text-amber-300">
               Specification <strong>{spec.specId}</strong> is currently in status{' '}
-              <span className="font-semibold uppercase">{spec.approvalRecord?.status ?? 'Draft'}</span>.
-              Only test cases with status <strong>Approved</strong> can be validated.
+              <span className="font-semibold uppercase">
+                {spec.approvalRecord?.status ?? 'Draft'}
+              </span>
+              . Only test cases with status <strong>Approved</strong> can be validated.
             </p>
             <Link
               to={`/approval?specId=${spec.specId}`}
@@ -143,9 +143,7 @@ export const ValidationRunControls: React.FC<ValidationRunControlsProps> = ({
           <div className="flex items-start gap-2">
             <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-blue-600 dark:text-blue-400" />
             <div>
-              <span className="font-semibold">
-                No Generated Scripts Found in Workspace (§3.5)
-              </span>
+              <span className="font-semibold">No Generated Scripts Found in Workspace (§3.5)</span>
               <p className="text-blue-700 dark:text-blue-300">
                 {approvedCount} test cases are approved. Generate TypeScript Page Objects and
                 Playwright scripts to begin automated validation.
@@ -264,9 +262,13 @@ export const ValidationRunControls: React.FC<ValidationRunControlsProps> = ({
             )}
           </span>
           <span>•</span>
-          <span>Mode: <strong className="uppercase">{mode}</strong></span>
+          <span>
+            Mode: <strong className="uppercase">{mode}</strong>
+          </span>
           <span>•</span>
-          <span>Auto-Heal: <strong>{autoHeal ? `ON (${maxHealAttempts}x)` : 'OFF'}</strong></span>
+          <span>
+            Auto-Heal: <strong>{autoHeal ? `ON (${maxHealAttempts}x)` : 'OFF'}</strong>
+          </span>
         </div>
 
         <div className="flex items-center gap-2">

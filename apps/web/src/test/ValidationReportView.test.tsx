@@ -79,9 +79,7 @@ describe('ValidationReportView component (§W4)', () => {
     const staticTab = screen.getByRole('button', { name: /static analysis/i });
     fireEvent.click(staticTab);
 
-    expect(
-      screen.getByRole('heading', { name: /typescript compilation/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /typescript compilation/i })).toBeInTheDocument();
     expect(screen.getByText(/Selector Stability & Locator Analysis/i)).toBeInTheDocument();
     expect(screen.getByText("getByRole('button')")).toBeInTheDocument();
   });
@@ -93,9 +91,7 @@ describe('ValidationReportView component (§W4)', () => {
     const conformanceTab = screen.getByRole('button', { name: /spec conformance/i });
     fireEvent.click(conformanceTab);
 
-    expect(
-      screen.getByText(/100% Traceability & Coverage Assurance/i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/100% Traceability & Coverage Assurance/i)).toBeInTheDocument();
     expect(screen.getByText(/100% Conforming/i)).toBeInTheDocument();
   });
 });

@@ -23,9 +23,7 @@ describe('ValidationPage (§W4)', () => {
     });
 
     await waitFor(() => {
-      expect(
-        screen.getByText(/Automated Validation, Runs & Reports/i),
-      ).toBeInTheDocument();
+      expect(screen.getByText(/Automated Validation, Runs & Reports/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/select specification/i)).toBeInTheDocument();
       expect(screen.getByText(/Pipeline Controls/i)).toBeInTheDocument();
     });
@@ -36,9 +34,7 @@ describe('ValidationPage (§W4)', () => {
     expect(screen.getAllByText(/Spec Conformance/i).length).toBeGreaterThan(0);
 
     // Check action buttons
-    expect(
-      screen.getByRole('button', { name: /run validation pipeline/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /run validation pipeline/i })).toBeInTheDocument();
   });
 
   it('triggers pipeline execution and shows success notification when approved', async () => {

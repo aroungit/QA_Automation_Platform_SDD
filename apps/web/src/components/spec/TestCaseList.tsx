@@ -27,6 +27,25 @@ export const TestCaseList: React.FC<TestCaseListProps> = ({ testCases, specId })
   const [selectedCase, setSelectedCase] = useState<TestCase | null>(null);
   const [copiedSnippet, setCopiedSnippet] = useState(false);
 
+  // Keyboard accessibility & scroll lock for detail modal
+  React.useEffect(() => {
+    if (!selectedCase) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedCase(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [selectedCase]);
+
   // Filter logic
   const filtered = testCases.filter((tc) => {
     const matchesSearch =

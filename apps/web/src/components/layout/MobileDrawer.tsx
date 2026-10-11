@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Bot, Moon, Sparkles, Sun, X } from 'lucide-react';
+import { Bot, CheckCircle2, Download, Moon, Sparkles, Sun, X } from 'lucide-react';
 import type { LLMProviderName } from '@qaa/shared';
+import { usePWAInstall } from '../../hooks/usePWAInstall';
 import { useLLM } from '../../providers/LLMContext';
 import { useTheme } from '../../theme/ThemeContext';
 import { NAV_ITEMS } from './Navigation';
@@ -15,6 +16,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
   const { resolvedTheme, toggleTheme } = useTheme();
   const { providers, selectedProvider, selectedModel, setSelectedProvider, setSelectedModel } =
     useLLM();
+  const { isInstallable, isStandalone, promptInstall } = usePWAInstall();
 
   // Close on Escape key
   useEffect(() => {
@@ -42,6 +44,10 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
   if (!isOpen) return null;
 
   const activeProvider = providers.find((p) => p.name === selectedProvider);
+
+  const handleInstall = async () => {
+    await promptInstall();
+  };
 
   return (
     <div
@@ -112,6 +118,29 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
               );
             })}
           </div>
+
+          {/* PWA Install Action if available */}
+          {isInstallable && (
+            <div className="pt-2 pb-3">
+              <button
+                type="button"
+                onClick={handleInstall}
+                className="w-full flex items-center justify-center gap-2 px-3 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold shadow-sm transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                Install App (PWA)
+              </button>
+            </div>
+          )}
+
+          {isStandalone && (
+            <div className="pt-2 pb-2">
+              <div className="w-full flex items-center justify-center gap-1.5 px-2 py-1.5 bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 rounded-lg text-xs font-medium border border-emerald-200 dark:border-emerald-800">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                Running as Installed PWA
+              </div>
+            </div>
+          )}
 
           {/* LLM Provider Configuration */}
           <div className="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3">

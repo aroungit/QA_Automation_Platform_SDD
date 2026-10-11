@@ -1,0 +1,38 @@
+{
+  "specId": "SPEC-LOGIN-003",
+  "status": "Approved",
+  "reviewer": "Lead QA Engineer",
+  "comments": "Approved by reviewer",
+  "approvedTestCases": [
+    "TC-LOGIN-001",
+    "TC-LOGIN-002",
+    "TC-LOGIN-003",
+    "TC-LOGIN-004",
+    "TC-LOGIN-005"
+  ],
+  "timestamp": "2026-10-11T02:17:47.267Z",
+  "history": [
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Draft",
+      "reviewer": "System",
+      "comments": "Specification created via user story intake",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-11T02:16:46.781Z"
+    },
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Approved",
+      "reviewer": "Lead QA Engineer",
+      "comments": "Approved by reviewer",
+      "approvedTestCases": [
+        "TC-LOGIN-001",
+        "TC-LOGIN-002",
+        "TC-LOGIN-003",
+        "TC-LOGIN-004",
+        "TC-LOGIN-005"
+      ],
+      "timestamp": "2026-10-11T02:17:47.267Z"
+    }
+  ]
+}

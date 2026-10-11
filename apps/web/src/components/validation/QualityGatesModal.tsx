@@ -60,6 +60,25 @@ export const QualityGatesModal: React.FC<QualityGatesModalProps> = ({
     };
   }, [isOpen, specId]);
 
+  // Keyboard accessibility & scroll lock
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const allPassed = evaluation?.passed ?? false;

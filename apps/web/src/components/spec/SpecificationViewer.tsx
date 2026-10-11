@@ -86,6 +86,19 @@ export const SpecificationViewer: React.FC<SpecificationViewerProps> = ({ spec, 
     }
   };
 
+  // Close feedback modal on Escape
+  React.useEffect(() => {
+    if (!showFeedbackModal) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setShowFeedbackModal(null);
+        setFeedbackText('');
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showFeedbackModal]);
+
   return (
     <div className="space-y-6">
       {/* Action Notification Banners */}

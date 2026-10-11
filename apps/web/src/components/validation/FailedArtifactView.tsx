@@ -122,8 +122,7 @@ export const FailedArtifactView: React.FC<FailedArtifactViewProps> = ({
 
   const filteredFiles = files.filter((f) => {
     const matchesSearch = f.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory =
-      selectedCategory === 'all' || getFileCategory(f) === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || getFileCategory(f) === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
@@ -197,7 +196,9 @@ export const FailedArtifactView: React.FC<FailedArtifactViewProps> = ({
           <div className="space-y-1">
             {failedTests.map((ft) => (
               <div key={ft.testCaseId} className="font-mono text-[11px] flex items-start gap-2">
-                <span className="font-bold text-rose-900 dark:text-rose-300">[{ft.testCaseId}]</span>
+                <span className="font-bold text-rose-900 dark:text-rose-300">
+                  [{ft.testCaseId}]
+                </span>
                 <span className="truncate">{ft.error || 'Test assertion failed'}</span>
               </div>
             ))}

@@ -75,7 +75,8 @@ export const ValidationPage: React.FC = () => {
         }
       })
       .catch((err) => {
-        if (mounted) setErrorMessage(`Failed to load specifications: ${String(err.message || err)}`);
+        if (mounted)
+          setErrorMessage(`Failed to load specifications: ${String(err.message || err)}`);
       })
       .finally(() => {
         if (mounted) setLoadingInitial(false);

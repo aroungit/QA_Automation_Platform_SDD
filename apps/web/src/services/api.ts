@@ -129,11 +129,7 @@ export const api = {
     }),
 
   // Script Generation & Workspace (§3.5, §3.7)
-  generateScripts: (
-    specId: string,
-    options?: GenerateScriptsRequest,
-    llm?: LLMRequestHeaders,
-  ) =>
+  generateScripts: (specId: string, options?: GenerateScriptsRequest, llm?: LLMRequestHeaders) =>
     request<GenerateScriptsResult>(`/api/specs/${specId}/generate-scripts`, {
       method: 'POST',
       body: JSON.stringify(options ?? {}),
@@ -159,11 +155,7 @@ export const api = {
     }),
 
   // Automated Validation & Auto-Healing (§3.6)
-  validateSpec: (
-    specId: string,
-    options?: ValidateSpecRequest,
-    llm?: LLMRequestHeaders,
-  ) =>
+  validateSpec: (specId: string, options?: ValidateSpecRequest, llm?: LLMRequestHeaders) =>
     request<ValidationReport>(`/api/specs/${specId}/validate`, {
       method: 'POST',
       body: JSON.stringify(options ?? {}),
@@ -191,11 +183,7 @@ export const api = {
       method: 'POST',
       body: JSON.stringify(options ?? {}),
     }),
-  revalidateSpec: (
-    specId: string,
-    options?: ValidateSpecRequest,
-    llm?: LLMRequestHeaders,
-  ) =>
+  revalidateSpec: (specId: string, options?: ValidateSpecRequest, llm?: LLMRequestHeaders) =>
     request<ValidationReport>(`/api/specs/${specId}/revalidate`, {
       method: 'POST',
       body: JSON.stringify(options ?? {}),

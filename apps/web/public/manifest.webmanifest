@@ -1,17 +1,51 @@
 {
+  "id": "/",
   "name": "QA Automation Platform Agent",
   "short_name": "QAA Platform",
   "description": "Spec-Driven QA Automation Platform by Aroun AI labs",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#0f172a",
   "theme_color": "#4f46e5",
+  "categories": ["development", "utilities", "productivity"],
   "icons": [
     {
       "src": "/logo.svg",
       "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Story Intake",
+      "short_name": "Intake",
+      "description": "Submit a new user story for spec generation",
+      "url": "/intake",
+      "icons": [{ "src": "/logo.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Specifications",
+      "short_name": "Specs",
+      "description": "Browse specifications and test cases",
+      "url": "/specs",
+      "icons": [{ "src": "/logo.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Approval Gate",
+      "short_name": "Approvals",
+      "description": "Review and approve candidate test cases",
+      "url": "/approval",
+      "icons": [{ "src": "/logo.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Validation Pipeline",
+      "short_name": "Validation",
+      "description": "View test runs, reports and auto-healing",
+      "url": "/validation",
+      "icons": [{ "src": "/logo.svg", "sizes": "192x192" }]
     }
   ]
 }

@@ -33,8 +33,8 @@ Global web requirements: React (Vite + TS), dark/light theme toggle, fully respo
 - [x] Report/trace links and heal attempts
 - [x] Failed-artifact view
 
-### W5 — Web QA pass — ⬜ Not started
+### W5 — Web QA pass — ✅ Completed
 
-- [ ] Mobile/tablet/desktop alignment checks
-- [ ] Dark/light theme checks
-- [ ] PWA install check and cross-browser check
+- [x] Mobile/tablet/desktop alignment checks
+- [x] Dark/light theme checks
+- [x] PWA install check and cross-browser check
