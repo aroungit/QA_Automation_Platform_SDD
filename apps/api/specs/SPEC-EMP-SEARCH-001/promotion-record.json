@@ -1,0 +1,71 @@
+{
+  "specId": "SPEC-EMP-SEARCH-001",
+  "promotedAt": "2026-10-17T03:43:07.484Z",
+  "validationReportId": "VAL-SPEC-EMP-SEARCH-001-1792202300927",
+  "status": "promoted",
+  "revalidationRequired": false,
+  "promotedFiles": [
+    {
+      "sourcePath": "playwright.config.ts",
+      "targetPath": "automation/playwright.config.ts",
+      "category": "config",
+      "platform": "shared",
+      "size": 1741
+    },
+    {
+      "sourcePath": "tsconfig.json",
+      "targetPath": "automation/tsconfig.json",
+      "category": "config",
+      "platform": "shared",
+      "size": 317
+    },
+    {
+      "sourcePath": "web/fixtures/spec-enable-customers-001-data.json",
+      "targetPath": "automation/web/fixtures/spec-enable-customers-001-data.json",
+      "category": "fixture",
+      "platform": "web",
+      "size": 975
+    },
+    {
+      "sourcePath": "web/pages/EnableCustomersToResetTheirPasswordPage.ts",
+      "targetPath": "automation/web/pages/EnableCustomersToResetTheirPasswordPage.ts",
+      "category": "page",
+      "platform": "web",
+      "size": 2105
+    },
+    {
+      "sourcePath": "web/utils/test-helpers.ts",
+      "targetPath": "automation/web/utils/test-helpers.ts",
+      "category": "util",
+      "platform": "web",
+      "size": 555
+    }
+  ],
+  "commit": {
+    "sha": "c4f1716badd116989604924701ae232e0c442790",
+    "message": "feat(SPEC-EMP-SEARCH-001): promote validated Playwright automation test suite (§3.7, §8)",
+    "committedFiles": [
+      "automation/playwright.config.ts",
+      "automation/tsconfig.json",
+      "automation/web/fixtures/spec-enable-customers-001-data.json",
+      "automation/web/pages/EnableCustomersToResetTheirPasswordPage.ts",
+      "automation/web/utils/test-helpers.ts",
+      "specs/SPEC-EMP-SEARCH-001/user-story.md",
+      "specs/SPEC-EMP-SEARCH-001/user-story.json",
+      "specs/SPEC-EMP-SEARCH-001/specification.md",
+      "specs/SPEC-EMP-SEARCH-001/specification.json",
+      "specs/SPEC-EMP-SEARCH-001/test-cases.md",
+      "specs/SPEC-EMP-SEARCH-001/test-cases.json",
+      "specs/SPEC-EMP-SEARCH-001/approval-record.json",
+      "specs/SPEC-EMP-SEARCH-001/promotion-record.json",
+      "reports/execution-results/VAL-SPEC-EMP-SEARCH-001-1792202300927.json"
+    ],
+    "timestamp": "2026-10-17T03:43:07.510Z",
+    "author": "Copilot <223556219+Copilot@users.noreply.github.com>"
+  },
+  "metadata": {
+    "platform": "mobile",
+    "targetApp": "OrangeHRM",
+    "reviewer": "Lead QA Engineer"
+  }
+}
