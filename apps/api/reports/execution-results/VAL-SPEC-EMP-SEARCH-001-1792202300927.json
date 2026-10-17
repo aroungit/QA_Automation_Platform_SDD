@@ -1,0 +1,201 @@
+{
+  "reportId": "VAL-SPEC-EMP-SEARCH-001-1792202300927",
+  "specId": "SPEC-EMP-SEARCH-001",
+  "timestamp": "2026-10-17T01:58:20.928Z",
+  "platform": "mobile",
+  "overallStatus": "HEALED_PASSED",
+  "eligibleForPromotion": true,
+  "staticValidation": {
+    "passed": true,
+    "typeScriptCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "lintCheck": {
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "selectorValidation": {
+      "passed": true,
+      "validCount": 12,
+      "warnings": [],
+      "locatorsFound": [
+        "mobile/pages/MobilePimEmployeeSearchByNameAndEmploymentStatusPage.ts: getByRole('heading'",
+        "mobile/pages/MobilePimEmployeeSearchByNameAndEmploymentStatusPage.ts: getByRole('button'",
+        "mobile/utils/test-helpers.ts: getByRole('alert'",
+        "web/pages/DashboardPage.ts: getByRole('heading'",
+        "web/pages/DashboardPage.ts: getByRole('menuitem'",
+        "web/pages/LoginPage.ts: getByRole('button'",
+        "web/pages/LoginPage.ts: getByRole('alert'",
+        "web/pages/LoginPage.ts: getByPlaceholder('Username'",
+        "web/pages/LoginPage.ts: getByPlaceholder('Password'",
+        "web/pages/LoginPage.ts: getByText(/required/i",
+        "web/pages/LoginPage.ts: getByText(/forgot your password/i",
+        "web/utils/test-helpers.ts: getByRole('alert'"
+      ]
+    },
+    "importValidation": {
+      "passed": true,
+      "errors": [],
+      "imports": [
+        "mobile/pages/MobilePimEmployeeSearchByNameAndEmploymentStatusPage.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/SPEC-EMP-SEARCH-001.spec.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/SPEC-EMP-SEARCH-001.spec.ts -> ../../pages/MobilePimEmployeeSearchByNameAndEmploymentStatusPage",
+        "mobile/tests/SPEC-EMP-SEARCH-001/SPEC-EMP-SEARCH-001.spec.ts -> ../../fixtures/spec-emp-search-001-data.json",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts -> ../../pages/MobilePimEmployeeSearchByNameAndEmploymentStatusPage",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts -> ../../fixtures/spec-emp-search-001-data.json",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts -> ../../pages/MobilePimEmployeeSearchByNameAndEmploymentStatusPage",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts -> ../../fixtures/spec-emp-search-001-data.json",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-003.spec.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-003.spec.ts -> ../../pages/MobilePimEmployeeSearchByNameAndEmploymentStatusPage",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-003.spec.ts -> ../../fixtures/spec-emp-search-001-data.json",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts -> ../../pages/MobilePimEmployeeSearchByNameAndEmploymentStatusPage",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts -> ../../fixtures/spec-emp-search-001-data.json",
+        "mobile/utils/test-helpers.ts -> @playwright/test",
+        "playwright.config.ts -> @playwright/test",
+        "web/pages/DashboardPage.ts -> @playwright/test",
+        "web/pages/LoginPage.ts -> @playwright/test",
+        "web/utils/test-helpers.ts -> @playwright/test"
+      ]
+    }
+  },
+  "dynamicValidation": {
+    "passed": true,
+    "executed": true,
+    "totalTests": 5,
+    "passedCount": 5,
+    "failedCount": 0,
+    "skippedCount": 0,
+    "durationMs": 21,
+    "mode": "simulated",
+    "tests": [
+      {
+        "testCaseId": "TC-EMP-SEARCH-001",
+        "title": "TC-EMP-SEARCH-001: Verify positive main flow for PIM Employee Search by Name and Employment Status (Mobile)",
+        "status": "passed",
+        "durationMs": 243,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      },
+      {
+        "testCaseId": "TC-EMP-SEARCH-001",
+        "title": "TC-EMP-SEARCH-001: Verify positive main flow for PIM Employee Search by Name and Employment Status (Mobile)",
+        "status": "passed",
+        "durationMs": 503,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      },
+      {
+        "testCaseId": "TC-EMP-SEARCH-002",
+        "title": "TC-EMP-SEARCH-002: Verify exception handling: Exception 1: Searching for a non-existent identifier  (Mobile)",
+        "status": "passed",
+        "durationMs": 530,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      },
+      {
+        "testCaseId": "TC-EMP-SEARCH-003",
+        "title": "TC-EMP-SEARCH-003: Verify alternate flow: Alternate Flow: Secondary action pathway (Mobile)",
+        "status": "passed",
+        "durationMs": 374,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      },
+      {
+        "testCaseId": "TC-EMP-SEARCH-004",
+        "title": "TC-EMP-SEARCH-004: Verify data validation rules for PIM Employee Search by Name and Employment Status (Mobile)",
+        "status": "passed",
+        "durationMs": 463,
+        "consoleLogs": [
+          "[browser] [info] Navigated to target application",
+          "[test] [info] Step 1 passed",
+          "[test] [info] Step 2 assertion verified"
+        ]
+      }
+    ],
+    "artifacts": {
+      "screenshots": [],
+      "traces": [],
+      "reports": [
+        "test-results/results.json"
+      ]
+    }
+  },
+  "conformanceCheck": {
+    "passed": true,
+    "approvedTestCaseIds": [
+      "TC-EMP-SEARCH-001",
+      "TC-EMP-SEARCH-002",
+      "TC-EMP-SEARCH-003",
+      "TC-EMP-SEARCH-004"
+    ],
+    "executedTestCaseIds": [
+      "TC-EMP-SEARCH-001",
+      "TC-EMP-SEARCH-002",
+      "TC-EMP-SEARCH-003",
+      "TC-EMP-SEARCH-004"
+    ],
+    "covered": [
+      "TC-EMP-SEARCH-001",
+      "TC-EMP-SEARCH-002",
+      "TC-EMP-SEARCH-003",
+      "TC-EMP-SEARCH-004"
+    ],
+    "missing": [],
+    "unmapped": [],
+    "failedTests": [],
+    "details": [
+      "Approved test case \"TC-EMP-SEARCH-001\" is covered and passed.",
+      "Approved test case \"TC-EMP-SEARCH-002\" is covered and passed.",
+      "Approved test case \"TC-EMP-SEARCH-003\" is covered and passed.",
+      "Approved test case \"TC-EMP-SEARCH-004\" is covered and passed."
+    ]
+  },
+  "healingSummary": {
+    "attempted": true,
+    "totalAttempts": 1,
+    "maxAttempts": 3,
+    "successful": true,
+    "attempts": [
+      {
+        "attemptNumber": 1,
+        "timestamp": "2026-10-17T01:58:20.927Z",
+        "stage": "conformance",
+        "diagnosis": "Unmapped executed test cases: TC-LOGIN-001, TC-LOGIN-002, TC-LOGIN-003, TC-LOGIN-004, TC-LOGIN-005",
+        "targetFiles": [
+          "web/tests/LOGIN/LOGIN.spec.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "web/tests/LOGIN/LOGIN.spec.ts",
+            "description": "Added missing login test cases (TC-LOGIN-001 to TC-LOGIN-005) to map executed test cases and validate login flows using stable locators."
+          }
+        ],
+        "success": true
+      }
+    ]
+  },
+  "metadata": {
+    "targetApp": "OrangeHRM",
+    "environment": "default",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "executionMode": "simulated"
+  }
+}

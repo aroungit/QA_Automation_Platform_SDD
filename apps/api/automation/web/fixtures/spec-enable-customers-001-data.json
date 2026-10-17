@@ -1,0 +1,14 @@
+{
+  "specId": "SPEC-ENABLE-CUSTOMERS-001",
+  "testData": {
+    "email": "test_email_value",
+    "resetToken": "test_resetToken_value",
+    "newPassword": "test_newPassword_value",
+    "tokenCreationTimestamp": "test_tokenCreationTimestamp_value"
+  },
+  "acceptanceCriteria": [
+    "Given a registered customer is on the login page and selects “Forgot password,” when they enter the email address linked to their account, then the system sends a one-time password-reset link to that email address.",
+    "Given the customer opens a valid, unexpired reset link, when they enter a new password that meets the password policy and confirms it, then the system updates the password, signs out all active sessions, and displays a success confirmation",
+    "Given the customer uses an expired, already-used, or invalid reset link, when they attempt to reset their password, then the system displays a clear error message and provides an option to request a new reset link"
+  ]
+}
