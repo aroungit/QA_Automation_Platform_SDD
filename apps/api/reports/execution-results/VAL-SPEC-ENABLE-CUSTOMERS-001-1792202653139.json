@@ -1,0 +1,158 @@
+{
+  "reportId": "VAL-SPEC-ENABLE-CUSTOMERS-001-1792202653139",
+  "specId": "SPEC-ENABLE-CUSTOMERS-001",
+  "timestamp": "2026-10-17T02:04:13.139Z",
+  "platform": "web",
+  "overallStatus": "FAILED",
+  "eligibleForPromotion": false,
+  "staticValidation": {
+    "passed": true,
+    "typeScriptCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "lintCheck": {
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "selectorValidation": {
+      "passed": true,
+      "validCount": 5,
+      "warnings": [],
+      "locatorsFound": [
+        "web/pages/EnableCustomersToResetTheirPasswordPage.ts: getByRole('heading'",
+        "web/pages/EnableCustomersToResetTheirPasswordPage.ts: getByRole('heading'",
+        "web/pages/EnableCustomersToResetTheirPasswordPage.ts: getByRole('button'",
+        "web/pages/EnableCustomersToResetTheirPasswordPage.ts: getByRole('alert'",
+        "web/utils/test-helpers.ts: getByRole('alert'"
+      ]
+    },
+    "importValidation": {
+      "passed": true,
+      "errors": [],
+      "imports": [
+        "playwright.config.ts -> @playwright/test",
+        "web/pages/EnableCustomersToResetTheirPasswordPage.ts -> @playwright/test",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/SPEC-ENABLE-CUSTOMERS-001.spec.ts -> @playwright/test",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/SPEC-ENABLE-CUSTOMERS-001.spec.ts -> ../../pages/EnableCustomersToResetTheirPasswordPage",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/SPEC-ENABLE-CUSTOMERS-001.spec.ts -> ../../fixtures/spec-enable-customers-001-data.json",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-001.spec.ts -> @playwright/test",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-001.spec.ts -> ../../pages/EnableCustomersToResetTheirPasswordPage",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-001.spec.ts -> ../../fixtures/spec-enable-customers-001-data.json",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-002.spec.ts -> @playwright/test",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-002.spec.ts -> ../../pages/EnableCustomersToResetTheirPasswordPage",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-002.spec.ts -> ../../fixtures/spec-enable-customers-001-data.json",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-003.spec.ts -> @playwright/test",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-003.spec.ts -> ../../pages/EnableCustomersToResetTheirPasswordPage",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-003.spec.ts -> ../../fixtures/spec-enable-customers-001-data.json",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-004.spec.ts -> @playwright/test",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-004.spec.ts -> ../../pages/EnableCustomersToResetTheirPasswordPage",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-004.spec.ts -> ../../fixtures/spec-enable-customers-001-data.json",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-005.spec.ts -> @playwright/test",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-005.spec.ts -> ../../pages/EnableCustomersToResetTheirPasswordPage",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-005.spec.ts -> ../../fixtures/spec-enable-customers-001-data.json",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-006.spec.ts -> @playwright/test",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-006.spec.ts -> ../../pages/EnableCustomersToResetTheirPasswordPage",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-006.spec.ts -> ../../fixtures/spec-enable-customers-001-data.json",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-007.spec.ts -> @playwright/test",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-007.spec.ts -> ../../pages/EnableCustomersToResetTheirPasswordPage",
+        "web/tests/SPEC-ENABLE-CUSTOMERS-001/TC-ENABLE-CUSTOMERS-007.spec.ts -> ../../fixtures/spec-enable-customers-001-data.json",
+        "web/utils/test-helpers.ts -> @playwright/test"
+      ]
+    }
+  },
+  "dynamicValidation": {
+    "passed": false,
+    "executed": false,
+    "totalTests": 0,
+    "passedCount": 0,
+    "failedCount": 0,
+    "skippedCount": 0,
+    "durationMs": 2,
+    "mode": "real",
+    "tests": [],
+    "artifacts": {
+      "screenshots": [],
+      "traces": [],
+      "reports": []
+    },
+    "error": "Playwright test execution failed: spawn EINVAL"
+  },
+  "conformanceCheck": {
+    "passed": false,
+    "approvedTestCaseIds": [
+      "TC-ENABLE-CUSTOMERS-001",
+      "TC-ENABLE-CUSTOMERS-002",
+      "TC-ENABLE-CUSTOMERS-003",
+      "TC-ENABLE-CUSTOMERS-004",
+      "TC-ENABLE-CUSTOMERS-005",
+      "TC-ENABLE-CUSTOMERS-006",
+      "TC-ENABLE-CUSTOMERS-007"
+    ],
+    "executedTestCaseIds": [],
+    "covered": [],
+    "missing": [
+      "TC-ENABLE-CUSTOMERS-001",
+      "TC-ENABLE-CUSTOMERS-002",
+      "TC-ENABLE-CUSTOMERS-003",
+      "TC-ENABLE-CUSTOMERS-004",
+      "TC-ENABLE-CUSTOMERS-005",
+      "TC-ENABLE-CUSTOMERS-006",
+      "TC-ENABLE-CUSTOMERS-007"
+    ],
+    "unmapped": [],
+    "failedTests": [],
+    "details": [
+      "Approved test case \"TC-ENABLE-CUSTOMERS-001\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-002\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-003\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-004\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-005\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-006\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-007\" has no corresponding executed test script (§3.6)."
+    ]
+  },
+  "healingSummary": {
+    "attempted": true,
+    "totalAttempts": 3,
+    "maxAttempts": 3,
+    "successful": false,
+    "attempts": [
+      {
+        "attemptNumber": 1,
+        "timestamp": "2026-10-17T02:04:09.998Z",
+        "stage": "dynamic",
+        "diagnosis": "Playwright test execution failed: spawn EINVAL",
+        "targetFiles": [],
+        "changesApplied": [],
+        "success": false
+      },
+      {
+        "attemptNumber": 2,
+        "timestamp": "2026-10-17T02:04:11.613Z",
+        "stage": "dynamic",
+        "diagnosis": "Playwright test execution failed: spawn EINVAL",
+        "targetFiles": [],
+        "changesApplied": [],
+        "success": false
+      },
+      {
+        "attemptNumber": 3,
+        "timestamp": "2026-10-17T02:04:13.138Z",
+        "stage": "dynamic",
+        "diagnosis": "Playwright test execution failed: spawn EINVAL",
+        "targetFiles": [],
+        "changesApplied": [],
+        "success": false
+      }
+    ]
+  },
+  "metadata": {
+    "targetApp": "Online banking web app",
+    "environment": "default",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "executionMode": "real"
+  }
+}

@@ -1,0 +1,126 @@
+[
+  {
+    "id": "TC-LOGIN-001",
+    "specId": "SPEC-LOGIN-006",
+    "title": "Successful Admin User Authentication",
+    "preconditions": [
+      "User must have valid administrator credentials."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "User enters valid username and password",
+        "expectedResult": "User is authenticated and redirected to the Dashboard page."
+      }
+    ],
+    "expectedResults": [
+      "User is authenticated and redirected to the Dashboard page."
+    ],
+    "priority": "critical",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-002",
+    "specId": "SPEC-LOGIN-006",
+    "title": "Invalid Credentials Alert",
+    "preconditions": [
+      "User must have invalid administrator credentials."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "User enters invalid username or password.",
+        "expectedResult": "System displays an error alert 'Invalid credentials'."
+      }
+    ],
+    "expectedResults": [
+      "System displays an error alert 'Invalid credentials'."
+    ],
+    "priority": "high",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-003",
+    "specId": "SPEC-LOGIN-006",
+    "title": "Empty Fields Validation",
+    "preconditions": [],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "User submits the login form with empty username or password fields.",
+        "expectedResult": "System displays inline validation messages 'Required'."
+      }
+    ],
+    "expectedResults": [
+      "System displays inline validation messages 'Required'."
+    ],
+    "priority": "high",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-004",
+    "specId": "SPEC-LOGIN-006",
+    "title": "Forgot Password Navigation",
+    "preconditions": [],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "User clicks on 'Forgot your password?' link.",
+        "expectedResult": "System navigates to the password reset request screen."
+      }
+    ],
+    "expectedResults": [
+      "System navigates to the password reset request screen."
+    ],
+    "priority": "medium",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-005",
+    "specId": "SPEC-LOGIN-006",
+    "title": "Username Format Validation",
+    "preconditions": [],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "User enters an invalid email format as username.",
+        "expectedResult": "System displays inline validation messages 'Required'."
+      }
+    ],
+    "expectedResults": [
+      "System displays inline validation messages 'Required'."
+    ],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-006",
+    "specId": "SPEC-LOGIN-006",
+    "title": "Password Length Validation",
+    "preconditions": [],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "User enters a password shorter than 8 characters.",
+        "expectedResult": "System displays inline validation messages 'Required'."
+      }
+    ],
+    "expectedResults": [
+      "System displays inline validation messages 'Required'."
+    ],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  }
+]

@@ -93,7 +93,7 @@ describe('StorySubmissionForm component (§W2)', () => {
       expect(screen.getByText(/user story registered & artifacts generated!/i)).toBeInTheDocument();
     });
 
-    expect(screen.getByText('SPEC-LOGIN-001')).toBeInTheDocument();
+    expect(screen.getAllByText('SPEC-LOGIN-001').length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText(/view specification & test cases/i)).toBeInTheDocument();
   });
 });

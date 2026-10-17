@@ -20,8 +20,10 @@ import type {
 import { FailedArtifactView } from '../components/validation/FailedArtifactView';
 import { PipelineStepper } from '../components/validation/PipelineStepper';
 import { QualityGatesModal } from '../components/validation/QualityGatesModal';
+import { ValidationFailureSummary } from '../components/validation/ValidationFailureSummary';
 import { ValidationReportView } from '../components/validation/ValidationReportView';
 import { ValidationRunControls } from '../components/validation/ValidationRunControls';
+import { WorkflowNextStageBanner } from '../components/layout/WorkflowNextStageBanner';
 import { useLLM } from '../providers/LLMContext';
 import { api } from '../services/api';
 
@@ -384,6 +386,34 @@ export const ValidationPage: React.FC = () => {
         )}
       </div>
 
+      {/* Workflow Next Stage Guidance Banner */}
+      <WorkflowNextStageBanner
+        currentStage={4}
+        currentStageName="Automated Validation & Auto-Healing"
+        nextStageName="Release Quality Gates & Promotion"
+        nextStagePath={`/repository?specId=${selectedSpecId}`}
+        isReadyForNext={Boolean(activeReport?.eligibleForPromotion)}
+        specId={selectedSpecId}
+        readyMessage="Validation passed with 100% specification conformance! Ready to evaluate the 8 Quality Gates & promote."
+        pendingMessage={
+          !specPayload?.approvalRecord || specPayload.approvalRecord.status !== 'Approved'
+            ? 'Specification must be Approved at Stage 3 before automation scripts can be generated & executed.'
+            : !hasScripts
+              ? 'Click "Generate Scripts (§3.5)" below to create Page Objects and Playwright tests for approved test cases.'
+              : !activeReport
+                ? 'Click "Run Validation Pipeline (§3.6)" to execute static analysis, dynamic tests, and conformance checks.'
+                : activeReport.overallStatus === 'FAILED'
+                  ? 'Tests failed. Trigger "Self-Heal Failures (§3.6)" to autonomously fix selector or compilation issues.'
+                  : 'Execute the validation pipeline to evaluate test run results.'
+        }
+        actionButtonText="Proceed to Quality Gates & Repository (§3.7, §8)"
+        guidanceTips={[
+          'Run in Simulated mode for fast local validation or Real for live browser execution',
+          'Autonomous self-healing runs automatically up to 3 times on failures',
+          'Once passed, proceed to evaluate the 8 release quality gates',
+        ]}
+      />
+
       {/* Success Banner */}
       {successMessage && (
         <div className="p-3.5 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-xl text-xs text-emerald-800 dark:text-emerald-200 flex items-center justify-between gap-2 animate-fadeIn">
@@ -486,6 +516,13 @@ export const ValidationPage: React.FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Validation & Healing Failure Summary if any failure exists */}
+      <ValidationFailureSummary
+        report={activeReport}
+        onTriggerManualHeal={handleManualHeal}
+        onNavigateToTab={() => setActiveViewTab('report')}
+      />
 
       {/* Main View Area */}
       {activeViewTab === 'report' ? (

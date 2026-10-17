@@ -14,6 +14,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import type { SpecArtifactsPayload } from '@qaa/shared';
+import { WorkflowNextStageBanner } from '../components/layout/WorkflowNextStageBanner';
 import { SpecificationViewer } from '../components/spec/SpecificationViewer';
 import { TestCaseList } from '../components/spec/TestCaseList';
 import { api } from '../services/api';
@@ -104,6 +105,24 @@ export const SpecDetailPage: React.FC = () => {
           {spec.specId}
         </span>
       </nav>
+
+      {/* Workflow Next Stage Guidance Banner */}
+      <WorkflowNextStageBanner
+        currentStage={2}
+        currentStageName="Specifications & Test Cases"
+        nextStageName="Human Approval Gate"
+        nextStagePath={`/approval?specId=${spec.specId}`}
+        isReadyForNext={Boolean(spec.specificationJson && testCases.length > 0)}
+        specId={spec.specId}
+        readyMessage={`${testCases.length} candidate test cases ready for human approval review.`}
+        pendingMessage="Generate formal specification (§3.2) and candidate test cases (§3.3) before proceeding to the Approval Gate."
+        actionButtonText="Proceed to Approval Gate (§3.4)"
+        guidanceTips={[
+          'Review the Main Flow & Acceptance Criteria in the Spec tab',
+          'Inspect the Candidate Test Cases list',
+          'Regenerate with custom LLM feedback if any flows are missing',
+        ]}
+      />
 
       {/* Spec Header Card */}
       <div className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">

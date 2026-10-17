@@ -1,0 +1,218 @@
+{
+  "reportId": "VAL-SPEC-EMP-SEARCH-001-1792208954402",
+  "specId": "SPEC-EMP-SEARCH-001",
+  "timestamp": "2026-10-17T03:49:14.402Z",
+  "platform": "mobile",
+  "overallStatus": "FAILED",
+  "eligibleForPromotion": false,
+  "staticValidation": {
+    "passed": true,
+    "typeScriptCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "lintCheck": {
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "selectorValidation": {
+      "passed": true,
+      "validCount": 6,
+      "warnings": [],
+      "locatorsFound": [
+        "mobile/pages/PimEmployeeSearchPage.ts: getByRole('button'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByRole('button'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByPlaceholder('Employee Name'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByLabel('Full-Time Contract'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByText('No Records Found'",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts: getByPlaceholder('Employee Name'"
+      ]
+    },
+    "importValidation": {
+      "passed": true,
+      "errors": [],
+      "imports": [
+        "mobile/pages/PimEmployeeSearchPage.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts -> ../../pages/PimEmployeeSearchPage",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts -> ../../fixtures/testData.json",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts -> ../../pages/PimEmployeeSearchPage",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts -> ../../fixtures/testData.json",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-003.spec.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-003.spec.ts -> ../../pages/PimEmployeeSearchPage",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts -> @playwright/test",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts -> ../../pages/PimEmployeeSearchPage",
+        "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts -> ../../fixtures/testData.json",
+        "playwright.config.ts -> @playwright/test"
+      ]
+    }
+  },
+  "dynamicValidation": {
+    "passed": false,
+    "executed": false,
+    "totalTests": 0,
+    "passedCount": 0,
+    "failedCount": 0,
+    "skippedCount": 0,
+    "durationMs": 5,
+    "mode": "real",
+    "tests": [],
+    "artifacts": {
+      "screenshots": [],
+      "traces": [],
+      "reports": []
+    },
+    "error": "Playwright test execution failed: spawn EINVAL"
+  },
+  "conformanceCheck": {
+    "passed": false,
+    "approvedTestCaseIds": [
+      "TC-EMP-SEARCH-001",
+      "TC-EMP-SEARCH-002",
+      "TC-EMP-SEARCH-003",
+      "TC-EMP-SEARCH-004"
+    ],
+    "executedTestCaseIds": [],
+    "covered": [],
+    "missing": [
+      "TC-EMP-SEARCH-001",
+      "TC-EMP-SEARCH-002",
+      "TC-EMP-SEARCH-003",
+      "TC-EMP-SEARCH-004"
+    ],
+    "unmapped": [],
+    "failedTests": [],
+    "details": [
+      "Approved test case \"TC-EMP-SEARCH-001\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-EMP-SEARCH-002\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-EMP-SEARCH-003\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-EMP-SEARCH-004\" has no corresponding executed test script (§3.6)."
+    ]
+  },
+  "healingSummary": {
+    "attempted": true,
+    "totalAttempts": 4,
+    "maxAttempts": 4,
+    "successful": false,
+    "attempts": [
+      {
+        "attemptNumber": 1,
+        "timestamp": "2026-10-17T03:48:43.293Z",
+        "stage": "static",
+        "diagnosis": "TypeScript errors: mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts:9 - TS2345: Argument of type 'import(\"@playwright/test\").Page' is not assignable to parameter of type 'import(\"D:/GenAI_Tools/Handson/Agents/QA_Automation_Platform_SDD/node_modules/playwright-core/types/types\").Page'.\n  Type 'Page' is missing the following properties from type 'Page': evaluate, evaluateHandle, addInitScript, $, and 104 more.; mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts:9 - TS2345: Argument of type 'import(\"@playwright/test\").Page' is not assignable to parameter of type 'import(\"D:/GenAI_Tools/Handson/Agents/QA_Automation_Platform_SDD/node_modules/playwright-core/types/types\").Page'.\n  Type 'Page' is missing the following properties from type 'Page': evaluate, evaluateHandle, addInitScript, $, and 104 more.; mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-003.spec.ts:8 - TS2345: Argument of type 'import(\"@playwright/test\").Page' is not assignable to parameter of type 'import(\"D:/GenAI_Tools/Handson/Agents/QA_Automation_Platform_SDD/node_modules/playwright-core/types/types\").Page'.\n  Type 'Page' is missing the following properties from type 'Page': evaluate, evaluateHandle, addInitScript, $, and 104 more.",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts",
+          "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts",
+          "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts",
+          "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-003.spec.ts",
+          "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "Updated import statement to ensure compatibility with Playwright types."
+          },
+          {
+            "file": "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts",
+            "description": "Updated import statement to ensure compatibility with Playwright types."
+          },
+          {
+            "file": "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts",
+            "description": "Updated import statement to ensure compatibility with Playwright types."
+          },
+          {
+            "file": "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-003.spec.ts",
+            "description": "Updated import statement to ensure compatibility with Playwright types."
+          },
+          {
+            "file": "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts",
+            "description": "Updated import statement to ensure compatibility with Playwright types."
+          }
+        ],
+        "success": false
+      },
+      {
+        "attemptNumber": 2,
+        "timestamp": "2026-10-17T03:48:51.747Z",
+        "stage": "dynamic",
+        "diagnosis": "Playwright test execution failed: spawn EINVAL",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts",
+          "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "Fixed selector for the results table to ensure it matches the expected structure."
+          },
+          {
+            "file": "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts",
+            "description": "Added assertions for validation error after entering an empty employee name."
+          }
+        ],
+        "success": false
+      },
+      {
+        "attemptNumber": 3,
+        "timestamp": "2026-10-17T03:49:04.020Z",
+        "stage": "dynamic",
+        "diagnosis": "Playwright test execution failed: spawn EINVAL",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts",
+          "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts",
+          "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts",
+          "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "Fixed selector for getting the results table to ensure it matches the expected structure."
+          },
+          {
+            "file": "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-001.spec.ts",
+            "description": "Updated the selector for the search button to use getByRole for better accessibility."
+          },
+          {
+            "file": "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-002.spec.ts",
+            "description": "Updated the selector for the search button to use getByRole for better accessibility."
+          },
+          {
+            "file": "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-004.spec.ts",
+            "description": "Updated the selector for the search button to use getByRole for better accessibility."
+          }
+        ],
+        "success": false
+      },
+      {
+        "attemptNumber": 4,
+        "timestamp": "2026-10-17T03:49:14.402Z",
+        "stage": "dynamic",
+        "diagnosis": "Playwright test execution failed: spawn EINVAL",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts",
+          "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-003.spec.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "Ensure the locator for the results table is correctly targeting the table element."
+          },
+          {
+            "file": "mobile/tests/SPEC-EMP-SEARCH-001/TC-EMP-SEARCH-003.spec.ts",
+            "description": "Implement the alternate flow test case to ensure it performs actions and assertions."
+          }
+        ],
+        "success": false
+      }
+    ]
+  },
+  "metadata": {
+    "targetApp": "OrangeHRM",
+    "environment": "default",
+    "provider": "openrouter",
+    "model": "openai/gpt-4o-mini",
+    "executionMode": "real"
+  }
+}

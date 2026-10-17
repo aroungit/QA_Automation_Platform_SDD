@@ -1,0 +1,135 @@
+{
+  "specId": "SPEC-ENABLE-CUSTOMERS-002",
+  "promotedAt": "2026-10-17T04:43:11.015Z",
+  "validationReportId": "VAL-SPEC-ENABLE-CUSTOMERS-002-1792212119587",
+  "status": "promoted",
+  "revalidationRequired": false,
+  "promotedFiles": [
+    {
+      "sourcePath": "mobile/fixtures/testData.json",
+      "targetPath": "automation/mobile/fixtures/testData.json",
+      "category": "fixture",
+      "platform": "mobile",
+      "size": 83
+    },
+    {
+      "sourcePath": "mobile/pages/PimEmployeeSearchPage.ts",
+      "targetPath": "automation/mobile/pages/PimEmployeeSearchPage.ts",
+      "category": "page",
+      "platform": "mobile",
+      "size": 988
+    },
+    {
+      "sourcePath": "playwright.config.ts",
+      "targetPath": "automation/playwright.config.ts",
+      "category": "config",
+      "platform": "shared",
+      "size": 363
+    },
+    {
+      "sourcePath": "tsconfig.json",
+      "targetPath": "automation/tsconfig.json",
+      "category": "config",
+      "platform": "shared",
+      "size": 280
+    },
+    {
+      "sourcePath": "web/fixtures/passwordResetData.json",
+      "targetPath": "automation/web/fixtures/passwordResetData.json",
+      "category": "fixture",
+      "platform": "web",
+      "size": 146
+    },
+    {
+      "sourcePath": "web/pages/LoginPage.ts",
+      "targetPath": "automation/web/pages/LoginPage.ts",
+      "category": "page",
+      "platform": "web",
+      "size": 1194
+    },
+    {
+      "sourcePath": "web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-001.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-001.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 789
+    },
+    {
+      "sourcePath": "web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-002.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-002.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 1108
+    },
+    {
+      "sourcePath": "web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-003.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-003.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 933
+    },
+    {
+      "sourcePath": "web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-004.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-004.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 782
+    },
+    {
+      "sourcePath": "web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-005.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-005.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 864
+    },
+    {
+      "sourcePath": "web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-006.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-006.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 742
+    },
+    {
+      "sourcePath": "web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-007.spec.ts",
+      "targetPath": "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-007.spec.ts",
+      "category": "test",
+      "platform": "web",
+      "size": 1093
+    }
+  ],
+  "commit": {
+    "sha": "76b2424c952aed690134cbac072bdd9529db6c70",
+    "message": "feat(SPEC-ENABLE-CUSTOMERS-002): promote validated Playwright automation test suite (§3.7)",
+    "committedFiles": [
+      "automation/mobile/fixtures/testData.json",
+      "automation/mobile/pages/PimEmployeeSearchPage.ts",
+      "automation/playwright.config.ts",
+      "automation/tsconfig.json",
+      "automation/web/fixtures/passwordResetData.json",
+      "automation/web/pages/LoginPage.ts",
+      "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-001.spec.ts",
+      "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-002.spec.ts",
+      "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-003.spec.ts",
+      "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-004.spec.ts",
+      "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-005.spec.ts",
+      "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-006.spec.ts",
+      "automation/web/tests/SPEC-ENABLE-CUSTOMERS-002/TC-ENABLE-CUSTOMERS-007.spec.ts",
+      "specs/SPEC-ENABLE-CUSTOMERS-002/user-story.md",
+      "specs/SPEC-ENABLE-CUSTOMERS-002/user-story.json",
+      "specs/SPEC-ENABLE-CUSTOMERS-002/specification.md",
+      "specs/SPEC-ENABLE-CUSTOMERS-002/specification.json",
+      "specs/SPEC-ENABLE-CUSTOMERS-002/test-cases.md",
+      "specs/SPEC-ENABLE-CUSTOMERS-002/test-cases.json",
+      "specs/SPEC-ENABLE-CUSTOMERS-002/approval-record.json",
+      "specs/SPEC-ENABLE-CUSTOMERS-002/promotion-record.json",
+      "reports/execution-results/VAL-SPEC-ENABLE-CUSTOMERS-002-1792212119587.json"
+    ],
+    "timestamp": "2026-10-17T04:43:11.126Z",
+    "author": "Copilot <223556219+Copilot@users.noreply.github.com>"
+  },
+  "metadata": {
+    "platform": "web",
+    "targetApp": "OrangeHRM",
+    "reviewer": "Lead QA Engineer"
+  }
+}

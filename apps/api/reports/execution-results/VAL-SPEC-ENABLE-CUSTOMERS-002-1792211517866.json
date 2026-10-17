@@ -1,0 +1,154 @@
+{
+  "reportId": "VAL-SPEC-ENABLE-CUSTOMERS-002-1792211517866",
+  "specId": "SPEC-ENABLE-CUSTOMERS-002",
+  "timestamp": "2026-10-17T04:31:57.866Z",
+  "platform": "web",
+  "overallStatus": "FAILED",
+  "eligibleForPromotion": false,
+  "staticValidation": {
+    "passed": true,
+    "typeScriptCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "lintCheck": {
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "selectorValidation": {
+      "passed": true,
+      "validCount": 5,
+      "warnings": [],
+      "locatorsFound": [
+        "mobile/pages/PimEmployeeSearchPage.ts: getByRole('button'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByRole('button'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByPlaceholder('Employee Name'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByLabel('Full-Time Contract'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByText('No Records Found'"
+      ]
+    },
+    "importValidation": {
+      "passed": true,
+      "errors": [],
+      "imports": [
+        "mobile/pages/PimEmployeeSearchPage.ts -> @playwright/test",
+        "playwright.config.ts -> @playwright/test"
+      ]
+    }
+  },
+  "dynamicValidation": {
+    "passed": false,
+    "executed": false,
+    "totalTests": 0,
+    "passedCount": 0,
+    "failedCount": 0,
+    "skippedCount": 0,
+    "durationMs": 1,
+    "mode": "simulated",
+    "tests": [],
+    "artifacts": {
+      "screenshots": [],
+      "traces": [],
+      "reports": []
+    },
+    "error": "No test files found in workspace for specification \"SPEC-ENABLE-CUSTOMERS-002\"."
+  },
+  "conformanceCheck": {
+    "passed": false,
+    "approvedTestCaseIds": [
+      "TC-ENABLE-CUSTOMERS-001",
+      "TC-ENABLE-CUSTOMERS-002",
+      "TC-ENABLE-CUSTOMERS-003",
+      "TC-ENABLE-CUSTOMERS-004",
+      "TC-ENABLE-CUSTOMERS-005",
+      "TC-ENABLE-CUSTOMERS-006",
+      "TC-ENABLE-CUSTOMERS-007"
+    ],
+    "executedTestCaseIds": [],
+    "covered": [],
+    "missing": [
+      "TC-ENABLE-CUSTOMERS-001",
+      "TC-ENABLE-CUSTOMERS-002",
+      "TC-ENABLE-CUSTOMERS-003",
+      "TC-ENABLE-CUSTOMERS-004",
+      "TC-ENABLE-CUSTOMERS-005",
+      "TC-ENABLE-CUSTOMERS-006",
+      "TC-ENABLE-CUSTOMERS-007"
+    ],
+    "unmapped": [],
+    "failedTests": [],
+    "details": [
+      "Approved test case \"TC-ENABLE-CUSTOMERS-001\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-002\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-003\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-004\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-005\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-006\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-ENABLE-CUSTOMERS-007\" has no corresponding executed test script (§3.6)."
+    ]
+  },
+  "healingSummary": {
+    "attempted": true,
+    "totalAttempts": 3,
+    "maxAttempts": 3,
+    "successful": false,
+    "attempts": [
+      {
+        "attemptNumber": 1,
+        "timestamp": "2026-10-17T04:31:47.788Z",
+        "stage": "dynamic",
+        "diagnosis": "No test files found in workspace for specification \"SPEC-ENABLE-CUSTOMERS-002\".",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "Ensure the page navigates correctly by adding a base URL to the goto method."
+          }
+        ],
+        "success": false
+      },
+      {
+        "attemptNumber": 2,
+        "timestamp": "2026-10-17T04:31:53.405Z",
+        "stage": "dynamic",
+        "diagnosis": "No test files found in workspace for specification \"SPEC-ENABLE-CUSTOMERS-002\".",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "No changes needed; the file is valid and follows the Page Object Model."
+          }
+        ],
+        "success": false
+      },
+      {
+        "attemptNumber": 3,
+        "timestamp": "2026-10-17T04:31:57.866Z",
+        "stage": "dynamic",
+        "diagnosis": "No test files found in workspace for specification \"SPEC-ENABLE-CUSTOMERS-002\".",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "Ensure the page navigates to the correct URL and that all locators are stable."
+          }
+        ],
+        "success": false
+      }
+    ]
+  },
+  "metadata": {
+    "targetApp": "OrangeHRM",
+    "environment": "default",
+    "provider": "openrouter",
+    "model": "openai/gpt-4o-mini",
+    "executionMode": "simulated"
+  }
+}

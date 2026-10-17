@@ -1,0 +1,140 @@
+[
+  {
+    "id": "TC-LOGIN-001",
+    "specId": "SPEC-LOGIN-007",
+    "title": "Successful Login with Valid Credentials",
+    "preconditions": [
+      "The administrator must have valid login credentials."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Enter valid username and password",
+        "expectedResult": "User is authenticated and redirected to the Dashboard page."
+      }
+    ],
+    "expectedResults": [
+      "User is authenticated and redirected to the Dashboard page."
+    ],
+    "priority": "critical",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-002",
+    "specId": "SPEC-LOGIN-007",
+    "title": "Login with Invalid Credentials",
+    "preconditions": [
+      "The administrator must have valid login credentials."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Enter invalid username or password",
+        "expectedResult": "Display error alert 'Invalid credentials'"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Click on the login button",
+        "expectedResult": "Display error alert 'Invalid credentials'"
+      }
+    ],
+    "expectedResults": [
+      "Display error alert 'Invalid credentials'"
+    ],
+    "priority": "high",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-003",
+    "specId": "SPEC-LOGIN-007",
+    "title": "Login with Empty Fields",
+    "preconditions": [
+      "The administrator must have valid login credentials."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Leave username and password fields empty",
+        "expectedResult": "Display inline validation messages 'Required' for both fields"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Click on the login button",
+        "expectedResult": "Display inline validation messages 'Required' for both fields"
+      }
+    ],
+    "expectedResults": [
+      "Display inline validation messages 'Required' for both fields"
+    ],
+    "priority": "high",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-004",
+    "specId": "SPEC-LOGIN-007",
+    "title": "Forgot Password Navigation",
+    "preconditions": [
+      "The administrator must have valid login credentials."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Click on 'Forgot your password?' link",
+        "expectedResult": "Navigate to the password reset request screen"
+      }
+    ],
+    "expectedResults": [
+      "Navigate to the password reset request screen"
+    ],
+    "priority": "medium",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-005",
+    "specId": "SPEC-LOGIN-007",
+    "title": "Username Format Validation",
+    "preconditions": [],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Enter an invalid email format in the username field",
+        "expectedResult": "Display inline validation message for username"
+      }
+    ],
+    "expectedResults": [
+      "Display inline validation message for username"
+    ],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-LOGIN-006",
+    "specId": "SPEC-LOGIN-007",
+    "title": "Password Security Requirements Validation",
+    "preconditions": [],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Enter a password that does not meet security requirements",
+        "expectedResult": "Display inline validation message for password"
+      }
+    ],
+    "expectedResults": [
+      "Display inline validation message for password"
+    ],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  }
+]

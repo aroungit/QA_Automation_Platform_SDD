@@ -6,6 +6,7 @@ import { usePWAInstall } from '../../hooks/usePWAInstall';
 import { useLLM } from '../../providers/LLMContext';
 import { useTheme } from '../../theme/ThemeContext';
 import { NAV_ITEMS } from './Navigation';
+import { WorkflowProcessNav } from './WorkflowProcessNav';
 
 interface MobileDrawerProps {
   isOpen: boolean;
@@ -82,6 +83,11 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             >
               <X className="w-5 h-5" aria-hidden="true" />
             </button>
+          </div>
+
+          {/* Workflow Process Flow */}
+          <div className="py-2">
+            <WorkflowProcessNav onItemClick={onClose} />
           </div>
 
           {/* Navigation Links */}

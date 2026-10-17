@@ -1,6 +1,6 @@
 {
   "specId": "SPEC-EMP-SEARCH-001",
-  "promotedAt": "2026-10-17T03:43:07.484Z",
+  "promotedAt": "2026-10-17T03:43:19.902Z",
   "validationReportId": "VAL-SPEC-EMP-SEARCH-001-1792202300927",
   "status": "promoted",
   "revalidationRequired": false,
@@ -42,7 +42,7 @@
     }
   ],
   "commit": {
-    "sha": "c4f1716badd116989604924701ae232e0c442790",
+    "sha": "c06c898ce6452b32bb2419318966e9404c6f5b35",
     "message": "feat(SPEC-EMP-SEARCH-001): promote validated Playwright automation test suite (§3.7, §8)",
     "committedFiles": [
       "automation/playwright.config.ts",
@@ -60,7 +60,7 @@
       "specs/SPEC-EMP-SEARCH-001/promotion-record.json",
       "reports/execution-results/VAL-SPEC-EMP-SEARCH-001-1792202300927.json"
     ],
-    "timestamp": "2026-10-17T03:43:07.510Z",
+    "timestamp": "2026-10-17T03:43:19.923Z",
     "author": "Copilot <223556219+Copilot@users.noreply.github.com>"
   },
   "metadata": {

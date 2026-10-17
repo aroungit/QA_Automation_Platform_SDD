@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Archive, CheckCircle2, FileCheck2, FileText, Home, PlusCircle } from 'lucide-react';
+import { WorkflowProcessNav } from './WorkflowProcessNav';
 
 export interface NavItem {
   name: string;
@@ -50,8 +51,13 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const Navigation: React.FC = () => {
   return (
-    <nav className="hidden md:flex border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto w-full flex items-center space-x-1 sm:space-x-2 overflow-x-auto py-2">
+    <nav className="hidden md:flex w-64 shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 p-4">
+      <div className="w-full flex flex-col gap-4">
+        <WorkflowProcessNav />
+        <div className="space-y-1">
+          <span className="px-2 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">
+            Navigation
+          </span>
         {NAV_ITEMS.map((item) => {
           const Icon = item.icon;
           return (
@@ -72,6 +78,7 @@ export const Navigation: React.FC = () => {
             </NavLink>
           );
         })}
+        </div>
       </div>
     </nav>
   );

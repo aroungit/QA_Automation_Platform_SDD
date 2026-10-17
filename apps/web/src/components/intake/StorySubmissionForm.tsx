@@ -22,6 +22,7 @@ import type {
   SpecArtifactsPayload,
   UserStoryIntakeRequest,
 } from '@qaa/shared';
+import { WorkflowNextStageBanner } from '../layout/WorkflowNextStageBanner';
 import { useLLM } from '../../providers/LLMContext';
 import { api } from '../../services/api';
 
@@ -304,6 +305,22 @@ export const StorySubmissionForm: React.FC = () => {
           </div>
         </div>
 
+        {/* Workflow Next Stage Guidance Banner */}
+        <WorkflowNextStageBanner
+          currentStage={1}
+          currentStageName="User Story Intake"
+          nextStageName="Specifications & Test Cases"
+          nextStagePath={`/specs/${successResult.specId}`}
+          isReadyForNext={true}
+          specId={successResult.specId}
+          readyMessage={`Story registered as ${successResult.specId}! Formal specification & candidate test cases have been generated.`}
+          actionButtonText="Proceed to Specifications & Test Cases (§3.2, §3.3)"
+          guidanceTips={[
+            'Inspect the generated specification main & exception flows',
+            'Verify candidate test cases coverage before sending to reviewer',
+          ]}
+        />
+
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
           <button
@@ -417,20 +434,33 @@ export const StorySubmissionForm: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {/* Target Application */}
           <div className="space-y-1.5">
-            <label
-              htmlFor="target-app"
-              className="block text-xs font-semibold text-slate-700 dark:text-slate-300"
-            >
-              Target Application
-            </label>
+            <div className="flex items-center justify-between">
+              <label
+                htmlFor="target-app"
+                className="block text-xs font-semibold text-slate-700 dark:text-slate-300"
+              >
+                Target Application
+              </label>
+              <button
+                type="button"
+                onClick={() => setTargetApp('OrangeHRM')}
+                className="text-[10px] text-indigo-600 dark:text-indigo-400 hover:underline font-semibold"
+                title="Reset to default test application"
+              >
+                Default (OrangeHRM)
+              </button>
+            </div>
             <input
               id="target-app"
               type="text"
               value={targetApp}
               onChange={(e) => setTargetApp(e.target.value)}
-              placeholder="e.g. OrangeHRM"
+              placeholder="e.g. OrangeHRM, SauceDemo, etc."
               className="w-full px-3 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
+            <p className="text-[10px] text-slate-400">
+              Works across any web or mobile application. OrangeHRM is pre-configured for instant verification.
+            </p>
           </div>
 
           {/* Priority */}

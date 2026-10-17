@@ -1,0 +1,90 @@
+{
+  "specId": "SPEC-ENABLE-CUSTOMERS-001",
+  "status": "Approved",
+  "reviewer": "Lead QA Engineer",
+  "comments": "Approved by reviewer",
+  "approvedTestCases": [
+    "TC-ENABLE-CUSTOMERS-001",
+    "TC-ENABLE-CUSTOMERS-002",
+    "TC-ENABLE-CUSTOMERS-003",
+    "TC-ENABLE-CUSTOMERS-004",
+    "TC-ENABLE-CUSTOMERS-005",
+    "TC-ENABLE-CUSTOMERS-006",
+    "TC-ENABLE-CUSTOMERS-007"
+  ],
+  "timestamp": "2026-10-17T01:57:47.125Z",
+  "history": [
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Draft",
+      "reviewer": "System",
+      "comments": "Specification created via user story intake",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-17T01:49:49.011Z"
+    },
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Needs Clarification",
+      "reviewer": "Lead QA Engineer",
+      "comments": "Add Mobile related test cases",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-17T01:52:44.603Z"
+    },
+    {
+      "fromStatus": "Needs Clarification",
+      "toStatus": "Draft",
+      "reviewer": "System (Loopback)",
+      "comments": "Loopback stage \"all\" completed incorporating feedback: \"Add Mobile related test cases\"",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-17T01:53:00.101Z"
+    },
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Rejected",
+      "reviewer": "Lead QA Engineer",
+      "comments": "I dont see Mobile retated test cases along with Web test cases",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-17T01:54:29.232Z"
+    },
+    {
+      "fromStatus": "Rejected",
+      "toStatus": "Draft",
+      "reviewer": "System (Loopback)",
+      "comments": "Loopback stage \"all\" completed incorporating feedback: \"I dont see Mobile retated test cases along with Web test cases\"",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-17T01:54:41.828Z"
+    },
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Rejected",
+      "reviewer": "Lead QA Engineer",
+      "comments": "Add More test cases related to Mobile also",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-17T01:56:45.757Z"
+    },
+    {
+      "fromStatus": "Rejected",
+      "toStatus": "Draft",
+      "reviewer": "System (Loopback)",
+      "comments": "Loopback stage \"all\" completed incorporating feedback: \"Add More test cases related to Mobile also\"",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-17T01:57:07.534Z"
+    },
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Approved",
+      "reviewer": "Lead QA Engineer",
+      "comments": "Approved by reviewer",
+      "approvedTestCases": [
+        "TC-ENABLE-CUSTOMERS-001",
+        "TC-ENABLE-CUSTOMERS-002",
+        "TC-ENABLE-CUSTOMERS-003",
+        "TC-ENABLE-CUSTOMERS-004",
+        "TC-ENABLE-CUSTOMERS-005",
+        "TC-ENABLE-CUSTOMERS-006",
+        "TC-ENABLE-CUSTOMERS-007"
+      ],
+      "timestamp": "2026-10-17T01:57:47.125Z"
+    }
+  ]
+}

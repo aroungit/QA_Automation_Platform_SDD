@@ -35,6 +35,7 @@ import type {
   SpecSummaryItem,
   TestCase,
 } from '@qaa/shared';
+import { WorkflowNextStageBanner } from '../layout/WorkflowNextStageBanner';
 import { useLLM } from '../../providers/LLMContext';
 import { api } from '../../services/api';
 
@@ -418,6 +419,28 @@ export const ApprovalGateView: React.FC = () => {
         </div>
       ) : (
         <>
+          {/* Workflow Next Stage Guidance Banner */}
+          <WorkflowNextStageBanner
+            currentStage={3}
+            currentStageName="Human Approval Gate"
+            nextStageName="Validation & Auto-Healing"
+            nextStagePath={`/validation?specId=${specPayload.specId}`}
+            isReadyForNext={Boolean(canProceedInfo?.canProceed)}
+            specId={specPayload.specId}
+            readyMessage={`Test cases approved (${canProceedInfo?.approvedTestCases.length || 0} of ${canProceedInfo?.totalTestCases || 0}). Ready for Playwright script generation & automated validation.`}
+            pendingMessage={
+              currentStatus === 'Rejected' || currentStatus === 'Needs Clarification'
+                ? `Specification is in "${currentStatus}". Provide feedback in the correction loopback panel below to regenerate candidate test cases.`
+                : 'Select the candidate test cases you wish to approve, enter your reviewer name, and click "Approve Selected Test Cases" to unlock the Validation Pipeline.'
+            }
+            actionButtonText="Proceed to Validation Pipeline (§3.5, §3.6)"
+            guidanceTips={[
+              'Select test cases to automate',
+              'Enter reviewer name and comments if rejecting',
+              'Approval is a strict prerequisite before scripts can be generated',
+            ]}
+          />
+
           {/* Spec Summary & Status Header */}
           <div className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">

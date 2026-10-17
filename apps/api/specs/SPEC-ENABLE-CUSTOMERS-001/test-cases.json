@@ -1,0 +1,220 @@
+[
+  {
+    "id": "TC-ENABLE-CUSTOMERS-001",
+    "specId": "SPEC-ENABLE-CUSTOMERS-001",
+    "title": "Verify positive main flow for Enable Customers to Reset Their Password",
+    "preconditions": [
+      "Customer has a registered account with a valid email address",
+      "Customer is on the login page",
+      "Password policy is defined in the system"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Customer clicks the \"Forgot password\" link on the login page.",
+        "expectedResult": "System displays the password reset request form."
+      },
+      {
+        "stepNumber": 2,
+        "action": "Customer enters their registered email address and submits the form.",
+        "expectedResult": "System validates email format and existence, generates a one‑time reset token (expires in 30 minutes), stores it, and sends a reset link to the email."
+      },
+      {
+        "stepNumber": 3,
+        "action": "Customer receives the email and clicks the reset link.",
+        "expectedResult": "System verifies the token is valid and unexpired, then presents the new password entry screen."
+      },
+      {
+        "stepNumber": 4,
+        "action": "Customer enters a new password that complies with the password policy and confirms it.",
+        "expectedResult": "System validates the password and confirmation, updates the customer's password, invalidates the token, signs out all active sessions, and shows a success confirmation message."
+      }
+    ],
+    "expectedResults": [
+      "System validates the password and confirmation, updates the customer's password, invalidates the token, signs out all active sessions, and shows a success confirmation message."
+    ],
+    "priority": "high",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-002",
+    "specId": "SPEC-ENABLE-CUSTOMERS-001",
+    "title": "Verify exception handling: Invalid or Non‑existent Email",
+    "preconditions": [
+      "Customer has a registered account with a valid email address",
+      "Customer is on the login page",
+      "Password policy is defined in the system"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Set up scenario where Submitted email does not match any registered account.",
+        "expectedResult": "Condition is established"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Trigger action under exception condition",
+        "expectedResult": "System displays a generic error message: \"If the email is registered, a reset link will be sent,\" without revealing account existence."
+      }
+    ],
+    "expectedResults": [
+      "System displays a generic error message: \"If the email is registered, a reset link will be sent,\" without revealing account existence."
+    ],
+    "priority": "medium",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-003",
+    "specId": "SPEC-ENABLE-CUSTOMERS-001",
+    "title": "Verify exception handling: Expired/Used/Invalid Reset Token",
+    "preconditions": [
+      "Customer has a registered account with a valid email address",
+      "Customer is on the login page",
+      "Password policy is defined in the system"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Set up scenario where Customer clicks a reset link that is expired, already used, or malformed.",
+        "expectedResult": "Condition is established"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Trigger action under exception condition",
+        "expectedResult": "System shows an error message: \"The reset link is invalid or has expired.\" and provides a button to request a new reset link."
+      }
+    ],
+    "expectedResults": [
+      "System shows an error message: \"The reset link is invalid or has expired.\" and provides a button to request a new reset link."
+    ],
+    "priority": "medium",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-004",
+    "specId": "SPEC-ENABLE-CUSTOMERS-001",
+    "title": "Verify exception handling: Password Policy Violation",
+    "preconditions": [
+      "Customer has a registered account with a valid email address",
+      "Customer is on the login page",
+      "Password policy is defined in the system"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Set up scenario where New password does not meet the defined password policy.",
+        "expectedResult": "Condition is established"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Trigger action under exception condition",
+        "expectedResult": "System highlights the policy requirements and prevents submission until the password complies."
+      }
+    ],
+    "expectedResults": [
+      "System highlights the policy requirements and prevents submission until the password complies."
+    ],
+    "priority": "medium",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-005",
+    "specId": "SPEC-ENABLE-CUSTOMERS-001",
+    "title": "Verify alternate flow: Mobile Password Reset Request",
+    "preconditions": [
+      "Customer has a registered account with a valid email address",
+      "Customer is on the login page",
+      "Password policy is defined in the system"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Customer accesses the login page via a mobile browser or banking app.",
+        "expectedResult": "Step 1 completes as expected"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Customer taps the \"Forgot password\" link, which displays a mobile‑optimized reset request form.",
+        "expectedResult": "Step 2 completes as expected"
+      },
+      {
+        "stepNumber": 3,
+        "action": "Customer enters email and submits; system behaves identically to the web flow, sending the reset link.",
+        "expectedResult": "Step 3 completes as expected"
+      }
+    ],
+    "expectedResults": [
+      "Alternate pathway Mobile Password Reset Request completes successfully"
+    ],
+    "priority": "medium",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-006",
+    "specId": "SPEC-ENABLE-CUSTOMERS-001",
+    "title": "Verify alternate flow: Resend Reset Link",
+    "preconditions": [
+      "Customer has a registered account with a valid email address",
+      "Customer is on the login page",
+      "Password policy is defined in the system"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Customer selects \"Resend link\" on the expired‑link error screen.",
+        "expectedResult": "Step 1 completes as expected"
+      },
+      {
+        "stepNumber": 2,
+        "action": "System generates a new token, updates the stored token, and sends a fresh reset email.",
+        "expectedResult": "Step 2 completes as expected"
+      }
+    ],
+    "expectedResults": [
+      "Alternate pathway Resend Reset Link completes successfully"
+    ],
+    "priority": "medium",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-007",
+    "specId": "SPEC-ENABLE-CUSTOMERS-001",
+    "title": "Verify data validation rules for Enable Customers to Reset Their Password",
+    "preconditions": [
+      "Customer has a registered account with a valid email address",
+      "Customer is on the login page",
+      "Password policy is defined in the system"
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Attempt input violating rules for: email (Must be a valid email format; must exist in Customer table.), resetToken (Stored hashed; expires after 30 minutes; single‑use.), newPassword (Minimum 12 characters, at least one uppercase, one lowercase, one digit, one special character; must not match last 5 passwords.), tokenCreationTimestamp (Used to calculate expiration.)",
+        "expectedResult": "Validation error displayed, submission blocked"
+      },
+      {
+        "stepNumber": 2,
+        "action": "Provide compliant inputs for: email (Must be a valid email format; must exist in Customer table.), resetToken (Stored hashed; expires after 30 minutes; single‑use.), newPassword (Minimum 12 characters, at least one uppercase, one lowercase, one digit, one special character; must not match last 5 passwords.), tokenCreationTimestamp (Used to calculate expiration.)",
+        "expectedResult": "Inputs accepted without errors"
+      }
+    ],
+    "expectedResults": [
+      "System enforces input data requirements correctly"
+    ],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  }
+]

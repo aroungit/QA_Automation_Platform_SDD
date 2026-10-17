@@ -1,0 +1,167 @@
+{
+  "reportId": "VAL-SPEC-LOGIN-007-1792209000110",
+  "specId": "SPEC-LOGIN-007",
+  "timestamp": "2026-10-17T03:50:00.110Z",
+  "platform": "web",
+  "overallStatus": "FAILED",
+  "eligibleForPromotion": false,
+  "staticValidation": {
+    "passed": true,
+    "typeScriptCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "lintCheck": {
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    "selectorValidation": {
+      "passed": true,
+      "validCount": 5,
+      "warnings": [],
+      "locatorsFound": [
+        "mobile/pages/PimEmployeeSearchPage.ts: getByRole('button'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByRole('button'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByPlaceholder('Employee Name'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByLabel('Full-Time Contract'",
+        "mobile/pages/PimEmployeeSearchPage.ts: getByText('No Records Found'"
+      ]
+    },
+    "importValidation": {
+      "passed": true,
+      "errors": [],
+      "imports": [
+        "mobile/pages/PimEmployeeSearchPage.ts -> @playwright/test",
+        "playwright.config.ts -> @playwright/test"
+      ]
+    }
+  },
+  "dynamicValidation": {
+    "passed": false,
+    "executed": false,
+    "totalTests": 0,
+    "passedCount": 0,
+    "failedCount": 0,
+    "skippedCount": 0,
+    "durationMs": 1,
+    "mode": "real",
+    "tests": [],
+    "artifacts": {
+      "screenshots": [],
+      "traces": [],
+      "reports": []
+    },
+    "error": "Playwright test execution failed: spawn EINVAL"
+  },
+  "conformanceCheck": {
+    "passed": false,
+    "approvedTestCaseIds": [
+      "TC-LOGIN-001",
+      "TC-LOGIN-002",
+      "TC-LOGIN-003",
+      "TC-LOGIN-004",
+      "TC-LOGIN-005",
+      "TC-LOGIN-006"
+    ],
+    "executedTestCaseIds": [],
+    "covered": [],
+    "missing": [
+      "TC-LOGIN-001",
+      "TC-LOGIN-002",
+      "TC-LOGIN-003",
+      "TC-LOGIN-004",
+      "TC-LOGIN-005",
+      "TC-LOGIN-006"
+    ],
+    "unmapped": [],
+    "failedTests": [],
+    "details": [
+      "Approved test case \"TC-LOGIN-001\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-LOGIN-002\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-LOGIN-003\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-LOGIN-004\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-LOGIN-005\" has no corresponding executed test script (§3.6).",
+      "Approved test case \"TC-LOGIN-006\" has no corresponding executed test script (§3.6)."
+    ]
+  },
+  "healingSummary": {
+    "attempted": true,
+    "totalAttempts": 4,
+    "maxAttempts": 4,
+    "successful": false,
+    "attempts": [
+      {
+        "attemptNumber": 1,
+        "timestamp": "2026-10-17T03:49:43.248Z",
+        "stage": "dynamic",
+        "diagnosis": "Playwright test execution failed: spawn EINVAL",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "Fixed the locator for the Employee Name input field to ensure it correctly identifies the element."
+          }
+        ],
+        "success": false
+      },
+      {
+        "attemptNumber": 2,
+        "timestamp": "2026-10-17T03:49:49.883Z",
+        "stage": "dynamic",
+        "diagnosis": "Playwright test execution failed: spawn EINVAL",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "Fixed the locator for the Employee Name input field to ensure it matches the actual placeholder text."
+          }
+        ],
+        "success": false
+      },
+      {
+        "attemptNumber": 3,
+        "timestamp": "2026-10-17T03:49:56.082Z",
+        "stage": "dynamic",
+        "diagnosis": "Playwright test execution failed: spawn EINVAL",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "Fixed the locator for the Employee Name input field to ensure it correctly targets the input element."
+          }
+        ],
+        "success": false
+      },
+      {
+        "attemptNumber": 4,
+        "timestamp": "2026-10-17T03:50:00.110Z",
+        "stage": "dynamic",
+        "diagnosis": "Playwright test execution failed: spawn EINVAL",
+        "targetFiles": [
+          "mobile/pages/PimEmployeeSearchPage.ts"
+        ],
+        "changesApplied": [
+          {
+            "file": "mobile/pages/PimEmployeeSearchPage.ts",
+            "description": "Fixed the locator for the Employee Name input field to ensure it correctly targets the input element."
+          }
+        ],
+        "success": false
+      }
+    ]
+  },
+  "metadata": {
+    "targetApp": "OrangeHRM",
+    "environment": "default",
+    "provider": "openrouter",
+    "model": "openai/gpt-4o-mini",
+    "executionMode": "real"
+  }
+}

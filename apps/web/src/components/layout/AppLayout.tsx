@@ -21,19 +21,21 @@ export const AppLayout: React.FC = () => {
         onToggleMobileMenu={() => setMobileMenuOpen((prev) => !prev)}
       />
 
-      {/* Primary Desktop Navigation Bar */}
-      <Navigation />
-
       {/* Mobile Slide-Over Drawer */}
       <MobileDrawer isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
 
-      {/* Main Content Area */}
-      <main
-        id="main-content"
-        className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8"
-      >
-        <Outlet />
-      </main>
+      <div className="flex flex-1 min-h-0">
+        {/* Primary Desktop Navigation Sidebar */}
+        <Navigation />
+
+        {/* Main Content Area */}
+        <main
+          id="main-content"
+          className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8"
+        >
+          <Outlet />
+        </main>
+      </div>
 
       {/* Global Footer */}
       <Footer />
