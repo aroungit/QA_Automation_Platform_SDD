@@ -1,0 +1,42 @@
+{
+  "specId": "SPEC-ENABLE-CUSTOMERS-002",
+  "status": "Approved",
+  "reviewer": "Lead QA Engineer",
+  "comments": "Approved by reviewer",
+  "approvedTestCases": [
+    "TC-ENABLE-CUSTOMERS-001",
+    "TC-ENABLE-CUSTOMERS-002",
+    "TC-ENABLE-CUSTOMERS-003",
+    "TC-ENABLE-CUSTOMERS-004",
+    "TC-ENABLE-CUSTOMERS-005",
+    "TC-ENABLE-CUSTOMERS-006",
+    "TC-ENABLE-CUSTOMERS-007"
+  ],
+  "timestamp": "2026-10-17T04:30:29.854Z",
+  "history": [
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Draft",
+      "reviewer": "System",
+      "comments": "Specification created via user story intake",
+      "approvedTestCases": [],
+      "timestamp": "2026-10-17T04:28:51.620Z"
+    },
+    {
+      "fromStatus": "Draft",
+      "toStatus": "Approved",
+      "reviewer": "Lead QA Engineer",
+      "comments": "Approved by reviewer",
+      "approvedTestCases": [
+        "TC-ENABLE-CUSTOMERS-001",
+        "TC-ENABLE-CUSTOMERS-002",
+        "TC-ENABLE-CUSTOMERS-003",
+        "TC-ENABLE-CUSTOMERS-004",
+        "TC-ENABLE-CUSTOMERS-005",
+        "TC-ENABLE-CUSTOMERS-006",
+        "TC-ENABLE-CUSTOMERS-007"
+      ],
+      "timestamp": "2026-10-17T04:30:29.854Z"
+    }
+  ]
+}

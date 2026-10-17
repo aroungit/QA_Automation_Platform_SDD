@@ -1,0 +1,86 @@
+{
+  "specId": "SPEC-ENABLE-CUSTOMERS-002",
+  "title": "Enable Customers to Reset Their Password",
+  "businessObjective": "To allow registered customers to securely reset their forgotten passwords to regain access to their online banking accounts without needing support assistance.",
+  "actors": [
+    "Registered Customer",
+    "System"
+  ],
+  "preconditions": [
+    "The customer must be a registered user with an email address linked to their account.",
+    "The customer must have access to the email account linked to their OrangeHRM account."
+  ],
+  "mainFlow": [
+    {
+      "step": 1,
+      "action": "Customer navigates to the login page and selects 'Forgot password'",
+      "expected": "The system displays a prompt to enter the registered email address."
+    },
+    {
+      "step": 2,
+      "action": "Customer enters their email address and submits the request",
+      "expected": "The system sends a one-time password-reset link to the provided email address."
+    },
+    {
+      "step": 3,
+      "action": "Customer opens the email and clicks on the password-reset link",
+      "expected": "The system verifies the link is valid and unexpired."
+    },
+    {
+      "step": 4,
+      "action": "Customer enters a new password and confirms it",
+      "expected": "The system validates the new password against the password policy."
+    },
+    {
+      "step": 5,
+      "action": "Customer submits the new password",
+      "expected": "The system updates the password, signs out all active sessions, and displays a success confirmation message."
+    }
+  ],
+  "alternateFlows": [
+    {
+      "name": "Request New Reset Link",
+      "steps": [
+        "Customer receives the password-reset link but does not click it within the valid time frame.",
+        "Customer attempts to use the expired link.",
+        "The system displays an error message indicating the link has expired and provides an option to request a new reset link."
+      ]
+    },
+    {
+      "name": "Invalid Reset Link",
+      "steps": [
+        "Customer attempts to use an already-used reset link.",
+        "The system displays an error message indicating the link is invalid and provides an option to request a new reset link."
+      ]
+    }
+  ],
+  "exceptionFlows": [
+    {
+      "name": "Invalid Email Address",
+      "condition": "Customer enters an email address that is not linked to any account.",
+      "action": "The system displays an error message indicating that the email address is not recognized and suggests checking the input or registering."
+    }
+  ],
+  "dataRequirements": [
+    {
+      "field": "email",
+      "type": "string",
+      "rules": "Must be a valid email format and linked to a registered account."
+    },
+    {
+      "field": "newPassword",
+      "type": "string",
+      "rules": "Must meet the defined password policy including length, complexity, and confirmation."
+    }
+  ],
+  "acceptanceCriteria": [
+    "Given a registered customer is on the login page and selects “Forgot password,” when they enter the email address linked to their account, then the system sends a one-time password-reset link to that email address.",
+    "Given the customer opens a valid, unexpired reset link, when they enter a new password that meets the password policy and confirms it, then the system updates the password, signs out all active sessions, and displays a success confirmation.",
+    "Given the customer uses an expired, already-used, or invalid reset link, when they attempt to reset their password, then the system displays a clear error message and provides an option to request a new reset link."
+  ],
+  "nonFunctionalRequirements": [
+    "The system must ensure that all password reset communications are secure and comply with data protection regulations."
+  ],
+  "targetApp": "OrangeHRM",
+  "environment": "default"
+}

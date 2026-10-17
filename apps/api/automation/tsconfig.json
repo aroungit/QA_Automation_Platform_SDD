@@ -1,19 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "lib": [
-      "ES2022",
-      "DOM"
-    ],
+    "target": "es6",
+    "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist"
   },
-  "include": [
-    "**/*.ts",
-    "**/*.json"
-  ]
+  "include": ["web/**/*.ts"],
+  "exclude": ["node_modules"]
 }

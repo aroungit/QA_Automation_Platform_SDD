@@ -1,0 +1,173 @@
+[
+  {
+    "id": "TC-ENABLE-CUSTOMERS-001",
+    "specId": "SPEC-ENABLE-CUSTOMERS-002",
+    "title": "Successful Password Reset Request",
+    "preconditions": [
+      "The customer must be a registered user with an email address linked to their account.",
+      "The customer must have access to the email account linked to their OrangeHRM account."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Customer navigates to the login page and selects 'Forgot password'",
+        "expectedResult": "The system displays a prompt to enter the registered email address."
+      },
+      {
+        "stepNumber": 2,
+        "action": "Customer enters their email address and submits the request",
+        "expectedResult": "The system sends a one-time password-reset link to the provided email address."
+      }
+    ],
+    "expectedResults": [
+      "The system displays a prompt to enter the registered email address.",
+      "The system sends a one-time password-reset link to the provided email address."
+    ],
+    "priority": "critical",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-002",
+    "specId": "SPEC-ENABLE-CUSTOMERS-002",
+    "title": "Successful Password Reset with Valid Link",
+    "preconditions": [
+      "The customer must be a registered user with an email address linked to their account.",
+      "The customer must have access to the email account linked to their OrangeHRM account."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Customer opens the email and clicks on the password-reset link",
+        "expectedResult": "The system verifies the link is valid and unexpired."
+      },
+      {
+        "stepNumber": 2,
+        "action": "Customer enters a new password and confirms it",
+        "expectedResult": "The system validates the new password against the password policy."
+      },
+      {
+        "stepNumber": 3,
+        "action": "Customer submits the new password",
+        "expectedResult": "The system updates the password, signs out all active sessions, and displays a success confirmation message."
+      }
+    ],
+    "expectedResults": [
+      "The system verifies the link is valid and unexpired.",
+      "The system validates the new password against the password policy.",
+      "The system updates the password, signs out all active sessions, and displays a success confirmation message."
+    ],
+    "priority": "critical",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-003",
+    "specId": "SPEC-ENABLE-CUSTOMERS-002",
+    "title": "Expired Password Reset Link",
+    "preconditions": [
+      "The customer must be a registered user with an email address linked to their account.",
+      "The customer must have access to the email account linked to their OrangeHRM account."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Customer receives the password-reset link but does not click it within the valid time frame.",
+        "expectedResult": "The system displays an error message indicating the link has expired and provides an option to request a new reset link."
+      }
+    ],
+    "expectedResults": [
+      "The system displays an error message indicating the link has expired and provides an option to request a new reset link."
+    ],
+    "priority": "high",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-004",
+    "specId": "SPEC-ENABLE-CUSTOMERS-002",
+    "title": "Invalid Email Address for Password Reset",
+    "preconditions": [
+      "The customer must be a registered user with an email address linked to their account."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Customer enters an email address that is not linked to any account.",
+        "expectedResult": "The system displays an error message indicating that the email address is not recognized and suggests checking the input or registering."
+      }
+    ],
+    "expectedResults": [
+      "The system displays an error message indicating that the email address is not recognized and suggests checking the input or registering."
+    ],
+    "priority": "critical",
+    "testType": "negative",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-005",
+    "specId": "SPEC-ENABLE-CUSTOMERS-002",
+    "title": "Invalid Reset Link Usage",
+    "preconditions": [
+      "The customer must be a registered user with an email address linked to their account."
+    ],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Customer attempts to use an already-used reset link.",
+        "expectedResult": "The system displays an error message indicating the link is invalid and provides an option to request a new reset link."
+      }
+    ],
+    "expectedResults": [
+      "The system displays an error message indicating the link is invalid and provides an option to request a new reset link."
+    ],
+    "priority": "high",
+    "testType": "functional",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-006",
+    "specId": "SPEC-ENABLE-CUSTOMERS-002",
+    "title": "Valid Email Format Check",
+    "preconditions": [],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Customer enters an email address that is not in a valid format.",
+        "expectedResult": "The system displays an error message indicating the email format is invalid."
+      }
+    ],
+    "expectedResults": [
+      "The system displays an error message indicating the email format is invalid."
+    ],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  },
+  {
+    "id": "TC-ENABLE-CUSTOMERS-007",
+    "specId": "SPEC-ENABLE-CUSTOMERS-002",
+    "title": "New Password Policy Validation",
+    "preconditions": [],
+    "testSteps": [
+      {
+        "stepNumber": 1,
+        "action": "Customer enters a new password that does not meet the password policy.",
+        "expectedResult": "The system displays an error message indicating the new password does not meet the policy requirements."
+      }
+    ],
+    "expectedResults": [
+      "The system displays an error message indicating the new password does not meet the policy requirements."
+    ],
+    "priority": "medium",
+    "testType": "boundary",
+    "targetPlatform": "web",
+    "automationSuitability": "automatable"
+  }
+]
